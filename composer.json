@@ -1,0 +1,23 @@
+{
+    "name": "zaknes/tailwind-preset",
+    "description": "A Tailwind CSS preset for Laravel.",
+    "keywords": ["laravel", "laravel preset", "preset", "tailwind", "tailwindcss"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zak Nesler",
+            "email": "contact@zaknesler.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "ZakNesler\\TailwindPreset\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["ZakNesler\\TailwindPreset\\TailwindServiceProvider"]
+        }
+    }
+}
