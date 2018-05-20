@@ -8,7 +8,11 @@
 
         <ul class="list-reset flex items-center -mr-6">
             @auth
-                <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('home') }}">Home</a></li>
+                <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="#" v-on:click.prevent="logout">Logout</a></li>
+
+                <form ref="logoutForm" class="hidden" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
             @else
                 <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Login</a></li>
                 <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Register</a></li>

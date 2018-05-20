@@ -17,7 +17,7 @@
         props: ['title'],
 
         mounted() {
-            console.log('Component mounted.')
+            console.log('Example component mounted.')
         }
     }
 </script>
