@@ -10,6 +10,9 @@
         }
     ],
     "minimum-stability": "stable",
+    "require": {
+        "laravel/framework": "^5.5"
+    },
     "autoload": {
         "psr-4": {
             "ZakNesler\\TailwindPreset\\": "src/"

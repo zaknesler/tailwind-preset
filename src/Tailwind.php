@@ -16,11 +16,15 @@ class Tailwind extends Preset
      */
     public static function install()
     {
-        static::ensureComponentDirectoryExists();
-        static::replaceExampleComponent();
         static::updatePackages();
         static::updateWebpackConfiguration();
+
+        static::ensureComponentDirectoryExists();
+        static::updateExampleComponent();
         static::updateBootstrapping();
+        static::installLess();
+        static::installTailwindConfiguration();
+
         static::removeNodeModules();
     }
 
@@ -37,7 +41,7 @@ class Tailwind extends Preset
 
         file_put_contents(
             base_path('routes/web.php'),
-            "Auth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n\n",
+            "\nAuth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n",
             FILE_APPEND
         );
 
@@ -45,42 +49,29 @@ class Tailwind extends Preset
     }
 
     /**
-     * Replace the example Vue component with one tailored for Tailwind.
+     * Update the given package array.
      *
-     * @return void
+     * @param  array  $packages
+     * @return array
      */
-    protected static function replaceExampleComponent()
+    protected static function updatePackageArray(array $packages)
     {
-        (new Filesystem)->deleteDirectory(resource_path('assets/js/components/ExampleComponent.vue'));
-
-        copy(
-            __DIR__.'/stubs/js/components/ExampleComponent.stub.vue',
-            resource_path('assets/js/components/ExampleComponent.vue')
-        );
+        return array_merge([
+            'vue' => '^2.5.16',
+            'less' => '^3.0.2',
+            'less-loader' => '^4.1.0',
+            'laravel-mix-purgecss' => '^2.1.0',
+            'laravel-mix-tailwind' => '^0.1.0',
+        ], Arr::except($packages, [
+            'bootstrap',
+            'popper.js',
+            'jquery',
+            'lodash'
+        ]));
     }
 
     /**
-     * Update the welcome page.
-     *
-     * @return void
-     */
-    protected static function updateWelcomePage()
-    {
-        (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
-        copy(__DIR__.'/stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
-    }
-
-    protected static function scaffoldAuth()
-    {
-        tap(new Filesystem, function ($files) {
-            $files->deleteDirectory();
-
-            $files->delete(base_path('yarn.lock'));
-        });
-    }
-
-    /**
-     * Install the HomeController.
+     * Compile the HomeController class.
      *
      * @return void
      */
@@ -94,35 +85,12 @@ class Tailwind extends Preset
     }
 
     /**
-     * Update the given package array.
-     *
-     * @param  array  $packages
-     * @return array
-     */
-    protected static function updatePackageArray(array $packages)
-    {
-        return array_merge([
-            'vue' => '^2.5.16',
-            'laravel-mix-purgecss' => '^2.1.0',
-            'less' => '^3.0.2',
-            'less-loader' => '^4.1.0',
-            'tailwindcss' => '^0.5.3',
-        ], Arr::except($packages, [
-            'bootstrap',
-            'popper.js',
-            'jquery',
-            'lodash'
-        ]));
-    }
-
-    /**
      * Update the Webpack configuration.
      *
      * @return void
      */
     protected static function updateWebpackConfiguration()
     {
-        copy(__DIR__.'/stubs/tailwind.stub.js', base_path('tailwind.js'));
         copy(__DIR__.'/stubs/webpack.stub.mix.js', base_path('webpack.mix.js'));
     }
 
@@ -135,5 +103,47 @@ class Tailwind extends Preset
     {
         copy(__DIR__.'/stubs/js/app.stub.js', resource_path('assets/js/app.js'));
         copy(__DIR__.'/stubs/js/bootstrap.stub.js', resource_path('assets/js/bootstrap.js'));
+    }
+
+    /**
+     * Update the example Vue component.
+     *
+     * @return void
+     */
+    protected static function updateExampleComponent()
+    {
+        (new Filesystem)->delete(resource_path('assets/js/components/Example.js'));
+        (new Filesystem)->delete(resource_path('assets/js/components/ExampleComponent.vue'));
+
+        copy(
+            __DIR__.'/stubs/js/components/ExampleComponent.stub.vue',
+            resource_path('assets/js/components/ExampleComponent.vue')
+        );
+    }
+
+    /**
+     * Install less files.
+     *
+     * @return void
+     */
+    protected static function installLess()
+    {
+        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
+
+        if (!file_exists(resource_path('assets/less'))) {
+            mkdir(resource_path('assets/less'), 0777, true);
+        }
+
+        copy(__DIR__.'/stubs/less/app.stub.less', resource_path('assets/less/app.less'));
+    }
+
+    /**
+     * Install Tailwind configuration.
+     *
+     * @return void
+     */
+    protected static function installTailwindConfiguration()
+    {
+        copy(__DIR__.'/stubs/tailwind.stub.js', base_path('tailwind.js'));
     }
 }
