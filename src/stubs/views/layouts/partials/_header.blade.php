@@ -1,4 +1,4 @@
-<div class="w-full block h-1 bg-blue"></div>
+<div class="w-full block h-2 bg-blue"></div>
 
 <div class="w-full bg-grey-lightest border-b p-6 mb-6">
     <div class="max-w-2xl mx-auto flex items-center justify-between">

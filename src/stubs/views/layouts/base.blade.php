@@ -6,19 +6,27 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-        <title>{{ config('app.name') }}</title>
+        <title>@hasSection('title') @yield('title') &dash; {{ config('app.name') }} @else {{ config('app.name') }} @endif</title>
 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans text-base font-normal roman tracking-normal leading-normal bg-white text-grey-darker antialiased">
+    <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased">
         <div id="app" v-cloak>
-            @include('layouts/partials/_header')
+            @hasSection('show-header')
+                @include('layouts/partials/_header')
+            @endif
 
-            @include('layouts/partials/_content')
+            @hasSection('content-full')
+                @yield('content-full')
+            @endif
+
+            @hasSection('content')
+                @include('layouts/partials/_content')
+            @endif
         </div>
     </body>
 </html>

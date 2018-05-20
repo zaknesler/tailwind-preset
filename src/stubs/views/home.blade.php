@@ -1,7 +1,9 @@
 @extends('layouts/base')
 
+@section('show-header', true)
+
 @section('content')
     <example-component title="Dashboard">
-        You are signed in as <span class="font-medium">{{ Auth::user()->name }}</span>.
+        You are signed in!
     </example-component>
 @endsection
