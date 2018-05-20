@@ -1,6 +1,6 @@
 ## Tailwind CSS Front-end Preset
 
-This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This also includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
+This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This preset includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
 
 ### Installation
 
