@@ -1,5 +1,43 @@
-## Tailwind CSS Preset
+## Tailwind CSS Front-end Preset
 
-Todo:
+This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This also includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
+
+### Installation
+
+To install this preset, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
+
+```
+composer install zaknes/tailwind-preset
+```
+
+Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `tailwind-auth` preset will also install the authentication views, routes, and a controller.
+
+```
+php artisan preset tailwind
+
+// or
+
+php artisan preset tailwind-auth
+```
+
+Now install the NPM dependencies.
+
+```
+npm install
+
+// or
+
+yarn install
+```
+
+Now you can compile the assets!
+
+```
+npm run dev
+```
+
+Make sure your database is configured and migrated, and you're done!
+
+## Todo:
 
 - [ ] Responsive forms
