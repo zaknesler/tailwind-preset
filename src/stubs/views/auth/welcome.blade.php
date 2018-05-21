@@ -5,7 +5,7 @@
 @section('show-header', false)
 
 @section('content-full')
-    <div class="w-screen h-screen flex flex-col items-center justify-center">
+    <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
         @if (Route::has('login'))
             <div class="absolute pin-t pin-r m-8">
                 <ul class="list-reset flex items-center -mr-6">
@@ -21,12 +21,12 @@
 
         <div class="font-light text-5xl mb-6">{{ config('app.name') }}</div>
 
-        <ul class="list-reset flex items-center -mr-6">
-            <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laravel.com/docs">Documentation</a></li>
-            <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laracasts.com">Laracasts</a></li>
-            <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laravel-news.com">News</a></li>
-            <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://forge.laravel.com">Forge</a></li>
-            <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://github.com/laravel/laravel">GitHub</a></li>
+        <ul class="list-reset flex flex-col sm:flex-row items-center -mb-4 sm:-mr-6">
+            <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laravel.com/docs">Documentation</a></li>
+            <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laracasts.com">Laracasts</a></li>
+            <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laravel-news.com">News</a></li>
+            <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://forge.laravel.com">Forge</a></li>
+            <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://github.com/laravel/laravel">GitHub</a></li>
         </ul>
     </div>
 @endsection

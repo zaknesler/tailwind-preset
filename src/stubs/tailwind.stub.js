@@ -194,7 +194,6 @@ module.exports = {
 
   fonts: {
     'sans': [
-      'Source Sans Pro',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -573,7 +572,7 @@ module.exports = {
   minHeight: {
     '0': '0',
     'full': '100%',
-    'screen': '100vh'
+    'screen': '100vh',
   },
 
 

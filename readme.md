@@ -14,9 +14,7 @@ Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `t
 
 ```
 php artisan preset tailwind
-
 // or
-
 php artisan preset tailwind-auth
 ```
 
@@ -24,20 +22,12 @@ Now install the NPM dependencies.
 
 ```
 npm install
-
-// or
-
-yarn install
 ```
 
-Now you can compile the assets!
+Now just compile the assets using any of the laravel build scripts (dev, prod, watch).
 
 ```
 npm run dev
 ```
 
 Make sure your database is configured and migrated, and you're done!
-
-## Todo:
-
-- [ ] Responsive forms

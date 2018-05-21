@@ -10,11 +10,43 @@ use Illuminate\Foundation\Console\Presets\Preset;
 class Tailwind extends Preset
 {
     /**
-     * Install the preset.
+     * Install single welcome view.
      *
      * @return void
      */
     public static function install()
+    {
+        static::setup();
+
+        (new Filesystem)->copyDirectory(__DIR__.'/stubs/views/default', resource_path('views'));
+    }
+
+    /**
+     * Install authentication files.
+     *
+     * @return void
+     */
+    public static function installWithAuth()
+    {
+        static::setup();
+
+        file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+
+        file_put_contents(
+            base_path('routes/web.php'),
+            "\nAuth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n",
+            FILE_APPEND
+        );
+
+        (new Filesystem)->copyDirectory(__DIR__.'/stubs/views/auth', resource_path('views'));
+    }
+
+    /**
+     * Setup basic assets.
+     *
+     * @return void
+     */
+    private static function setup()
     {
         static::updatePackages();
         static::updateWebpackConfiguration();
@@ -29,26 +61,6 @@ class Tailwind extends Preset
     }
 
     /**
-     * Install authentication files.
-     *
-     * @return void
-     */
-    public static function installWithAuth()
-    {
-        static::install();
-
-        file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
-
-        file_put_contents(
-            base_path('routes/web.php'),
-            "\nAuth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n",
-            FILE_APPEND
-        );
-
-        (new Filesystem)->copyDirectory(__DIR__.'/stubs/views', resource_path('views'));
-    }
-
-    /**
      * Update the given package array.
      *
      * @param  array  $packages
@@ -58,9 +70,10 @@ class Tailwind extends Preset
     {
         return array_merge([
             'vue' => '^2.5.16',
-            'less' => '^3.0.2',
+            'less' => '^3.0.4',
             'less-loader' => '^4.1.0',
-            'laravel-mix-purgecss' => '^2.1.0',
+            'laravel-mix' => '^2.1.11',
+            'laravel-mix-purgecss' => '^2.1.2',
             'laravel-mix-tailwind' => '^0.1.0',
         ], Arr::except($packages, [
             'bootstrap',
