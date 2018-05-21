@@ -20,7 +20,7 @@ php artisan preset tailwind
 php artisan preset tailwind-auth
 ```
 
-Now install the NPM dependencies.
+Install the NPM dependencies.
 
 ```
 npm install
