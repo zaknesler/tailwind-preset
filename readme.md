@@ -14,7 +14,9 @@ Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `t
 
 ```
 php artisan preset tailwind
+
 // or
+
 php artisan preset tailwind-auth
 ```
 
