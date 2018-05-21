@@ -1,6 +1,10 @@
 ## Tailwind CSS Front-end Preset
 
+[View Screenshots &rarr;](preview.md)
+
 This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This preset includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
+
+> **Warning**: Installing presets may affect your existing views. It is recommended that you install presets on a fresh installation of Laravel.
 
 ### Installation
 
@@ -20,16 +24,16 @@ php artisan preset tailwind
 php artisan preset tailwind-auth
 ```
 
-Install the NPM dependencies.
+Install the NPM packages using your favorite package manager.
 
 ```
-npm install
+yarn install
 ```
 
-Now just compile the assets using any of the laravel build scripts (dev, prod, watch).
+Now just compile the assets using any of the Laravel build scripts (dev, prod, watch).
 
 ```
-npm run dev
+yarn run dev
 ```
 
 Make sure your database is configured and migrated, and you're done!
