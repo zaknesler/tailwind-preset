@@ -10,6 +10,8 @@ This preset will replace the default Bootstrap scaffolding with a custom Tailwin
 
 <a href="preview.md" target="_blank">View Screenshots &rarr;</a>
 
+<a href="https://preset.zaknesler.com" target="_blank">**Demo &rarr;**</a>
+
 ### Installation
 
 To install this preset, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
