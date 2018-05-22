@@ -69,12 +69,12 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'vue' => '^2.5.16',
-            'less' => '^3.0.4',
-            'less-loader' => '^4.1.0',
-            'laravel-mix' => '^2.1.11',
-            'laravel-mix-purgecss' => '^2.1.2',
-            'laravel-mix-tailwind' => '^0.1.0',
+            'vue' => '^2.5',
+            'less' => '^3.0',
+            'less-loader' => '^4.1',
+            'laravel-mix' => '^2.1',
+            'laravel-mix-purgecss' => '^2.1',
+            'laravel-mix-tailwind' => '^0.1',
         ], Arr::except($packages, [
             'bootstrap',
             'popper.js',
