@@ -10,10 +10,10 @@
             <div class="absolute pin-t pin-r m-8">
                 <ul class="list-reset flex items-center -mr-6">
                     @auth
-                        <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('home') }}">Home</a></li>
+                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('home') }}">Home</a></li>
                     @else
-                        <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Login</a></li>
-                        <li class="mr-6"><a class="text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Register</a></li>
+                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Login</a></li>
+                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Register</a></li>
                     @endauth
                 </ul>
             </div>
