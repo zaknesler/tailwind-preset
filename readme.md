@@ -8,9 +8,7 @@ This preset will replace the default Bootstrap scaffolding with a custom Tailwin
 
 > **Warning**: Installing presets may affect your existing views. It is recommended that you install presets on a fresh installation of Laravel.
 
-<a href="preview.md" target="_blank">View Screenshots &rarr;</a>
-
-<a href="https://preset.zaknesler.com" target="_blank">**Demo &rarr;**</a>
+[**Demo**](https://preset.zaknesler.com) &middot; [View Screenshots](preview.md)
 
 ### Installation
 
