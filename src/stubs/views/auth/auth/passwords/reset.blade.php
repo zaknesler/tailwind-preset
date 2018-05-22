@@ -18,7 +18,7 @@
                 <div class="bg-white rounded">
                     <div class="block rounded-t w-full h-2 bg-blue"></div>
 
-                    <form class="w-full border border-t-0 p-8" action="{{ route('password.request') }}" method="POST">
+                    <form class="w-full border border-t-0 rounded-b p-8" action="{{ route('password.request') }}" method="POST">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}" />

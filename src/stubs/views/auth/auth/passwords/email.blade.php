@@ -18,7 +18,7 @@
                 <div class="bg-white rounded">
                     <div class="block rounded-t w-full h-2 bg-blue"></div>
 
-                    <form class="w-full border border-t-0 p-8" action="{{ route('password.email') }}" method="POST">
+                    <form class="w-full border border-t-0 rounded-b p-8" action="{{ route('password.email') }}" method="POST">
                         @csrf
 
                         <div class="text-lg text-grey-darkest text-center mb-8">Reset password</div>
