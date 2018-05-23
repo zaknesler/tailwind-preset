@@ -6,21 +6,19 @@
 
 This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This preset includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
 
-> **Warning**: Installing presets may affect your existing views. It is recommended that you install presets on a fresh installation of Laravel.
-
-<a href="preview.md" target="_blank">View Screenshots &rarr;</a>
-
-<a href="https://preset.zaknesler.com" target="_blank">**Demo &rarr;**</a>
+[**Demo**](https://preset.zaknesler.com) &middot; [View Screenshots](preview.md)
 
 ### Installation
 
-To install this preset, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
+> **Warning**: Installing presets will affect your existing views and assets. Presets should be installed on a fresh installation of Laravel.
+
+To install, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
 
 ```
 composer require zaknes/tailwind-preset
 ```
 
-Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `tailwind-auth` preset will also install the authentication views, routes, and a controller.
+Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `tailwind-auth` preset includes authentication views, routes, and a controller.
 
 ```
 php artisan preset tailwind
