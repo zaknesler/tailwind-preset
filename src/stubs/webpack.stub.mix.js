@@ -8,7 +8,7 @@ mix.setPublicPath('public')
   .js('resources/assets/js/app.js', 'public/js')
   .options({
     postCss: [
-    tailwind('./tailwind.js'),
+      tailwind('./tailwind.js'),
     ]
   });
 
