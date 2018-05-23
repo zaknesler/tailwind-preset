@@ -4,11 +4,28 @@ namespace ZakNesler\TailwindPreset;
 
 use Illuminate\Support\Arr;
 use Illuminate\Container\Container;
-use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Console\Presets\Preset;
 
 class Tailwind extends Preset
 {
+    /**
+     * Setup basic assets.
+     *
+     * @return void
+     */
+    private static function setup()
+    {
+        static::ensureComponentDirectoryExists();
+        static::updatePackages();
+
+        static::installScripts();
+        static::installStyles();
+        static::updateExampleComponent();
+
+        static::removeNodeModules();
+    }
+
     /**
      * Install single welcome view.
      *
@@ -18,7 +35,7 @@ class Tailwind extends Preset
     {
         static::setup();
 
-        (new Filesystem)->copyDirectory(__DIR__.'/stubs/views/default', resource_path('views'));
+        File::copyDirectory(__DIR__.'/stubs/views/default', resource_path('views'));
     }
 
     /**
@@ -29,35 +46,29 @@ class Tailwind extends Preset
     public static function installWithAuth()
     {
         static::setup();
+        static::installAuthRoutes();
 
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+
+        File::copyDirectory(__DIR__.'/stubs/views/auth', resource_path('views'));
+    }
+
+    /**
+     * Install authentication routes if they are not present.
+     *
+     * @return void
+     */
+    protected static function installAuthRoutes()
+    {
+        if (str_contains(file_get_contents(base_path('routes/web.php')), 'Auth::routes();')) {
+            return;
+        }
 
         file_put_contents(
             base_path('routes/web.php'),
             "\nAuth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n",
             FILE_APPEND
         );
-
-        (new Filesystem)->copyDirectory(__DIR__.'/stubs/views/auth', resource_path('views'));
-    }
-
-    /**
-     * Setup basic assets.
-     *
-     * @return void
-     */
-    private static function setup()
-    {
-        static::updatePackages();
-        static::updateWebpackConfiguration();
-
-        static::ensureComponentDirectoryExists();
-        static::updateExampleComponent();
-        static::updateBootstrapping();
-        static::installLess();
-        static::installTailwindConfiguration();
-
-        static::removeNodeModules();
     }
 
     /**
@@ -69,10 +80,8 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'vue' => '^2.5',
             'less' => '^3.0',
             'less-loader' => '^4.1',
-            'laravel-mix' => '^2.1',
             'laravel-mix-purgecss' => '^2.1',
             'laravel-mix-tailwind' => '^0.1',
         ], Arr::except($packages, [
@@ -98,24 +107,34 @@ class Tailwind extends Preset
     }
 
     /**
-     * Update the Webpack configuration.
+     * Install all JavaScript files.
      *
      * @return void
      */
-    protected static function updateWebpackConfiguration()
+    protected static function installScripts()
     {
         copy(__DIR__.'/stubs/webpack.stub.mix.js', base_path('webpack.mix.js'));
+
+        copy(__DIR__.'/stubs/js/app.stub.js', resource_path('assets/js/app.js'));
+        copy(__DIR__.'/stubs/js/bootstrap.stub.js', resource_path('assets/js/bootstrap.js'));
+
+        copy(__DIR__.'/stubs/tailwind.stub.js', base_path('tailwind.js'));
     }
 
     /**
-     * Update the bootstrapping files.
+     * Install stylesheets.
      *
      * @return void
      */
-    protected static function updateBootstrapping()
+    protected static function installStyles()
     {
-        copy(__DIR__.'/stubs/js/app.stub.js', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub.js', resource_path('assets/js/bootstrap.js'));
+        File::deleteDirectory(resource_path('assets/sass'));
+
+        if (! file_exists(resource_path('assets/less'))) {
+            mkdir(resource_path('assets/less'), 0777, true);
+        }
+
+        copy(__DIR__.'/stubs/less/app.stub.less', resource_path('assets/less/app.less'));
     }
 
     /**
@@ -125,38 +144,11 @@ class Tailwind extends Preset
      */
     protected static function updateExampleComponent()
     {
-        (new Filesystem)->delete(resource_path('assets/js/components/Example.js'));
-        (new Filesystem)->delete(resource_path('assets/js/components/ExampleComponent.vue'));
+        File::cleanDirectory(resource_path('assets/js/components'));
 
         copy(
             __DIR__.'/stubs/js/components/ExampleComponent.stub.vue',
             resource_path('assets/js/components/ExampleComponent.vue')
         );
-    }
-
-    /**
-     * Install less files.
-     *
-     * @return void
-     */
-    protected static function installLess()
-    {
-        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
-
-        if (!file_exists(resource_path('assets/less'))) {
-            mkdir(resource_path('assets/less'), 0777, true);
-        }
-
-        copy(__DIR__.'/stubs/less/app.stub.less', resource_path('assets/less/app.less'));
-    }
-
-    /**
-     * Install Tailwind configuration.
-     *
-     * @return void
-     */
-    protected static function installTailwindConfiguration()
-    {
-        copy(__DIR__.'/stubs/tailwind.stub.js', base_path('tailwind.js'));
     }
 }
