@@ -88,7 +88,7 @@ class Tailwind extends Preset
             'bootstrap',
             'popper.js',
             'jquery',
-            'lodash'
+            'lodash',
         ]));
     }
 

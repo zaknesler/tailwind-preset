@@ -2,7 +2,6 @@
 
 namespace ZakNesler\TailwindPreset;
 
-use ZakNesler\TailwindPreset\Tailwind;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;
 
