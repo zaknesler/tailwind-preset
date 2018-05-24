@@ -128,7 +128,6 @@ class Tailwind extends Preset
     {
         File::deleteDirectory(resource_path('assets/sass'));
 
-
         if (! file_exists(resource_path('assets/less'))) {
             File::makeDirectory(resource_path('assets/less'), 0777, true);
         }
