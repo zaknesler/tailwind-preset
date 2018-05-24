@@ -23,7 +23,7 @@ class Tailwind extends Preset
         static::installStyles();
         static::updateExampleComponent();
 
-        static::removeNodeModules();
+        // static::removeNodeModules();
     }
 
     /**
@@ -101,7 +101,7 @@ class Tailwind extends Preset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__.'/stubs/controllers/HomeController.stub.php')
+            file_get_contents(__DIR__.'/stubs/controllers/HomeController.stub')
         );
     }
 
@@ -112,12 +112,12 @@ class Tailwind extends Preset
      */
     protected static function installScripts()
     {
-        copy(__DIR__.'/stubs/webpack.stub.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/js/app.stub.js', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/stubs/js/app.stub', resource_path('assets/js/app.js'));
+        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('assets/js/bootstrap.js'));
 
-        copy(__DIR__.'/stubs/tailwind.stub.js', base_path('tailwind.js'));
+        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
     }
 
     /**
@@ -129,11 +129,12 @@ class Tailwind extends Preset
     {
         File::deleteDirectory(resource_path('assets/sass'));
 
+
         if (! file_exists(resource_path('assets/less'))) {
-            mkdir(resource_path('assets/less'), 0777, true);
+            File::makeDirectory(resource_path('assets/less'), 0777, true);
         }
 
-        copy(__DIR__.'/stubs/less/app.stub.less', resource_path('assets/less/app.less'));
+        copy(__DIR__.'/stubs/less/app.stub', resource_path('assets/less/app.less'));
     }
 
     /**
@@ -146,7 +147,7 @@ class Tailwind extends Preset
         File::cleanDirectory(resource_path('assets/js/components'));
 
         copy(
-            __DIR__.'/stubs/js/components/ExampleComponent.stub.vue',
+            __DIR__.'/stubs/js/components/ExampleComponent.stub',
             resource_path('assets/js/components/ExampleComponent.vue')
         );
     }
