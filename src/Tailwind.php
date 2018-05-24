@@ -22,7 +22,7 @@ class Tailwind extends Preset
         static::installStyles();
         static::updateExampleComponent();
 
-        // static::removeNodeModules();
+        static::removeNodeModules();
     }
 
     /**
