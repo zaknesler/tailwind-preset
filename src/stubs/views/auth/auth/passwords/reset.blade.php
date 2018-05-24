@@ -6,7 +6,7 @@
 
 @section('content-full')
     <div class="min-h-full h-full bg-grey-lightest flex flex-col items-center overflow-auto">
-        <div class="m-auto max-w-xs w-full sm:p-8">
+        <div class="m-auto max-w-sm w-full sm:p-8">
             <div class="m-8">
                 <div class="text-xl text-center mb-8">
                     <a class="text-grey-darker hover:text-grey-darkest no-underline" href="/">{{ config('app.name') }}</a>
