@@ -8,11 +8,8 @@
     <div class="min-h-full h-full bg-grey-lightest flex flex-col items-center overflow-auto">
         <div class="m-auto max-w-sm w-full sm:p-8">
             <div class="m-8">
-                <div class="font-semibold mb-8">
-                    <a class="text-grey-darker no-underline hover:underline inline-flex items-center" href="/">
-                        <svg class="text-grey-dark fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"/></svg>
-                        <span class="ml-3">Home</span>
-                    </a>
+                <div class="text-xl text-center mb-8">
+                    <a class="text-grey-darker hover:text-grey-darkest no-underline" href="/">{{ config('app.name') }}</a>
                 </div>
 
                 <div class="bg-white rounded">
