@@ -2,7 +2,6 @@
 
 namespace ZakNesler\TailwindPreset;
 
-use Illuminate\Support\Arr;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Console\Presets\Preset;
@@ -87,7 +86,7 @@ class Tailwind extends Preset
             'less' => '^3.0',
             'less-loader' => '^4.1',
             'tailwindcss' => '^0.5',
-            'vue' => '^2.5'
+            'vue' => '^2.5',
         ];
     }
 
