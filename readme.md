@@ -40,4 +40,8 @@ Now just compile the assets using any of the Laravel build scripts (dev, prod, w
 yarn run dev
 ```
 
-Make sure your database is configured and migrated, and you're done!
+Make sure your database is configured and migrated, and you're done. At this point, you are free to remove the composer dependency, as it is no longer needed.
+
+```
+composer remove zaknes/tailwind-preset
+```
