@@ -15,7 +15,7 @@ This preset will replace the default Bootstrap scaffolding with a custom Tailwin
 To install, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
 
 ```
-composer require zaknes/tailwind-preset
+composer require zaknesler/tailwind-preset
 ```
 
 Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `tailwind-auth` preset includes authentication views, routes, and a controller.
@@ -43,5 +43,5 @@ yarn run dev
 Make sure your database is configured and migrated, and you're done. At this point, you are free to remove the composer dependency, as it is no longer needed.
 
 ```
-composer remove zaknes/tailwind-preset
+composer remove zaknesler/tailwind-preset
 ```
