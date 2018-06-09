@@ -1,5 +1,5 @@
 {
-    "name": "zaknes/tailwind-preset",
+    "name": "zaknesler/tailwind-preset",
     "description": "A Tailwind CSS preset for Laravel.",
     "keywords": ["laravel", "laravel preset", "preset", "tailwind", "tailwindcss"],
     "license": "MIT",
