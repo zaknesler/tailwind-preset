@@ -50,7 +50,7 @@
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
  *
- * Example :
+ * Example:
  *
  * .bg-pattern-graph-paper { ... }
  * .skew-45 { ... }
@@ -71,8 +71,4 @@ body {
 
 [v-cloak] {
     @apply .hidden;
-}
-
-.outline-none {
-    outline: 0;
 }

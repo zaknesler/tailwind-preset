@@ -80,12 +80,12 @@ class Tailwind extends Preset
     {
         return [
             'axios' => '^0.18',
-            'cross-env' => '^5.1',
+            'cross-env' => '^5.2',
             'laravel-mix' => '^2.1',
             'laravel-mix-purgecss' => '^2.2',
             'less' => '^3.0',
             'less-loader' => '^4.1',
-            'tailwindcss' => '^0.5',
+            'tailwindcss' => '^0.6',
             'vue' => '^2.5',
         ];
     }
