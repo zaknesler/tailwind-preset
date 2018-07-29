@@ -1,4 +1,4 @@
-## Tailwind CSS Front-end Preset
+## Tailwind CSS Laravel Front-end Preset
 
 [![Latest Stable Version](https://poser.pugx.org/zaknesler/tailwind-preset/v/stable)](https://packagist.org/packages/zaknesler/tailwind-preset)
 [![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset)
