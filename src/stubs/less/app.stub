@@ -1,6 +1,10 @@
 @tailwind preflight;
 @tailwind components;
+@tailwind utilities;
 
+[v-cloak] {
+    @apply .hidden;
+}
 
 input[type=checkbox] {
     @apply .relative .border .bg-grey-lighter .rounded-sm .outline-none .appearance-none .cursor-pointer .overflow-hidden .w-4 .h-4;
