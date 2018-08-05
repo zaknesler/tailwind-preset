@@ -53,6 +53,18 @@ class Tailwind extends Preset
     }
 
     /**
+     * Ensure the component directories we need exist.
+     *
+     * @return void
+     */
+    protected static function ensureComponentDirectoryExists()
+    {
+        if (! File::isDirectory($directory = resource_path('js/components'))) {
+            File::makeDirectory($directory, 0755, true);
+        }
+    }
+
+    /**
      * Install authentication routes if they are not present.
      *
      * @return void
@@ -113,8 +125,8 @@ class Tailwind extends Preset
     {
         copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/js/app.stub', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
+        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
 
         copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
     }
@@ -126,13 +138,13 @@ class Tailwind extends Preset
      */
     protected static function installStyles()
     {
-        File::deleteDirectory(resource_path('assets/sass'));
+        File::deleteDirectory(resource_path('sass'));
 
-        if (! file_exists(resource_path('assets/less'))) {
-            File::makeDirectory(resource_path('assets/less'), 0777, true);
+        if (! file_exists(resource_path('less'))) {
+            File::makeDirectory(resource_path('less'), 0777, true);
         }
 
-        copy(__DIR__.'/stubs/less/app.stub', resource_path('assets/less/app.less'));
+        copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
     }
 
     /**
@@ -142,11 +154,11 @@ class Tailwind extends Preset
      */
     protected static function updateExampleComponent()
     {
-        File::cleanDirectory(resource_path('assets/js/components'));
+        File::cleanDirectory(resource_path('js/components'));
 
         copy(
             __DIR__.'/stubs/js/components/ExampleComponent.stub',
-            resource_path('assets/js/components/ExampleComponent.vue')
+            resource_path('js/components/ExampleComponent.vue')
         );
     }
 }
