@@ -12,8 +12,8 @@
                     @auth
                         <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('home') }}">Home</a></li>
                     @else
-                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Login</a></li>
-                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Register</a></li>
+                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Sign in</a></li>
+                        <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Sign up</a></li>
                     @endauth
                 </ul>
             </div>

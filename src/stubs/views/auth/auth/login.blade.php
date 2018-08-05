@@ -1,6 +1,6 @@
 @extends('layouts/base')
 
-@section('title', 'Login')
+@section('title', 'Sign in')
 
 @section('show-header', false)
 
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="block mb-8">
-                            <input class="appearance-none w-full border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer p-3" type="submit" value="Login" />
+                            <input class="appearance-none w-full border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer p-3" type="submit" value="Sign in" />
                         </div>
 
                         <div class="text-center text-sm text-grey-dark">
