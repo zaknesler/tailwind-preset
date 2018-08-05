@@ -11,7 +11,7 @@
     </head>
     <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased">
         <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
-            <div class="font-light text-5xl mb-6">{{ config('app.name') }}</div>
+            <h1 class="font-light text-5xl mb-6">{{ config('app.name') }}</h1>
 
             <ul class="list-reset flex flex-col sm:flex-row items-center -mb-4 sm:-mr-6">
                 <li class="mb-4 sm:mr-6"><a class="text-blue-dark no-underline hover:underline" href="https://laravel.com/docs">Documentation</a></li>
