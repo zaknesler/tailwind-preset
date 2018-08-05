@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="text-center text-sm text-grey-dark">
-                            Don't have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('register') }}">Sign up</a>.
+                            Don't have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('register') }}">Sign up</a>
                         </div>
                     </form>
                 </div>

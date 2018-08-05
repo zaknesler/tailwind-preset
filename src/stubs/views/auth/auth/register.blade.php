@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="text-center text-sm text-grey-dark">
-                            Have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('login') }}">Sign in</a>.
+                            Have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('login') }}">Sign in</a>
                         </div>
                     </form>
                 </div>
