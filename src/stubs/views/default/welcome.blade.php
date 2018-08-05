@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>{{ config('app.name') }}</title>
 
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased">
         <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
