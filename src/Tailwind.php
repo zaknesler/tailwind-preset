@@ -111,12 +111,11 @@ class Tailwind extends Preset
      */
     protected static function installScripts()
     {
+        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
         copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
         copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
         copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
-
-        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
     }
 
     /**
