@@ -53,18 +53,6 @@ class Tailwind extends Preset
     }
 
     /**
-     * Ensure the component directories we need exist.
-     *
-     * @return void
-     */
-    protected static function ensureComponentDirectoryExists()
-    {
-        if (! File::isDirectory($directory = resource_path('js/components'))) {
-            File::makeDirectory($directory, 0755, true);
-        }
-    }
-
-    /**
      * Install authentication routes if they are not present.
      *
      * @return void
