@@ -15,7 +15,6 @@ class Tailwind extends Preset
      */
     private static function setup()
     {
-        static::ensureComponentDirectoryExists();
         static::ensureResourceDirectoriesExist();
         static::updatePackages();
 
