@@ -28,16 +28,18 @@ php artisan preset tailwind
 php artisan preset tailwind-auth
 ```
 
+> **Note:** If you install the `tailwind-auth` preset on a version of Laravel that is older than 5.7, you may delete the `views/auth/verify.blade.php` file, as it will not be used.
+
 Install the NPM packages using your favorite package manager.
 
 ```
-yarn
+yarn // npm install
 ```
 
 Now you can compile the assets using any of the Laravel build scripts (dev, prod, watch).
 
 ```
-yarn dev
+yarn dev // npm run dev
 ```
 
 Ensure that your database is properly configured and migrated, and you're done! At this point, you may remove the composer dependency, as it is no longer needed.
