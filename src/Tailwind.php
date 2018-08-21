@@ -16,6 +16,7 @@ class Tailwind extends Preset
     private static function setup()
     {
         static::ensureComponentDirectoryExists();
+        static::ensureResourceDirectoriesExist();
         static::updatePackages();
 
         static::installScripts();
@@ -105,6 +106,26 @@ class Tailwind extends Preset
     }
 
     /**
+     * Create any directories that do not exist.
+     *
+     * @return void
+     */
+    protected static function ensureResourceDirectoriesExist()
+    {
+        if (! file_exists(resource_path('less'))) {
+            File::makeDirectory(resource_path('less'), 0755, true);
+        }
+
+        if (! file_exists(resource_path('js'))) {
+            File::makeDirectory(resource_path('js'), 0755, true);
+        }
+
+        if (! file_exists(resource_path('js/components'))) {
+            File::makeDirectory(resource_path('js/components'), 0755, true);
+        }
+    }
+
+    /**
      * Install all JavaScript files.
      *
      * @return void
@@ -127,10 +148,6 @@ class Tailwind extends Preset
     {
         File::deleteDirectory(resource_path('sass'));
 
-        if (! file_exists(resource_path('less'))) {
-            File::makeDirectory(resource_path('less'), 0777, true);
-        }
-
         copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
     }
 
@@ -141,8 +158,6 @@ class Tailwind extends Preset
      */
     protected static function updateExampleComponent()
     {
-        File::cleanDirectory(resource_path('js/components'));
-
         copy(
             __DIR__.'/stubs/js/components/ExampleComponent.stub',
             resource_path('js/components/ExampleComponent.vue')
