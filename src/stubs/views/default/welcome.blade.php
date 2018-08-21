@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="h-full">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased">
+    <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased min-h-full h-full">
         <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
             <h1 class="font-light text-5xl mb-6">{{ config('app.name') }}</h1>
 
