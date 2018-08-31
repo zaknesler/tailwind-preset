@@ -10,7 +10,7 @@ This is a Laravel front-end preset for Tailwind CSS. This preset will replace th
 
 ### Installation
 
-> **Warning**: Installing presets will **overwrite** your existing views and assets. Presets should be installed on a fresh installation of Laravel. Please use with caution.
+> **Warning**: Installing this preset will **overwrite** your existing views and assets, and should only be installed on a fresh installation of Laravel. Please use with caution.
 
 To install this preset, you must first require the composer dependency. Laravel will automatically register the service provider for you.
 
