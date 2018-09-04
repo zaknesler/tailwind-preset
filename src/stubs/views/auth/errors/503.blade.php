@@ -10,6 +10,6 @@
 
         <div class="block w-16 h-1 bg-blue my-6"></div>
 
-        <div class="text-lg text-grey-dark">We'll be right back.</div>
+        <div class="text-lg text-grey-dark">{{ $exception->getMessage() ?: 'We\'ll be right back.' }}</div>
     </div>
 @endsection
