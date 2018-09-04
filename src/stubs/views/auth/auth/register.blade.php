@@ -1,6 +1,6 @@
 @extends('layouts/base')
 
-@section('title', 'Register')
+@section('title', 'Sign up')
 
 @section('show-header', false)
 
@@ -77,11 +77,11 @@
                         </div>
 
                         <div class="block mb-8">
-                            <input class="appearance-none w-full border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer p-3" type="submit" value="Register" />
+                            <input class="appearance-none w-full border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer p-3" type="submit" value="Sign up" />
                         </div>
 
                         <div class="text-center text-sm text-grey-dark">
-                            Have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('login') }}">Sign in</a>.
+                            Have an account? <a class="font-semibold text-grey-darker no-underline hover:underline" href="{{ route('login') }}">Sign in</a>
                         </div>
                     </form>
                 </div>

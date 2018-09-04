@@ -1,5 +1,5 @@
-![Welcome Page](https://user-images.githubusercontent.com/7189795/40496997-244892aa-5f49-11e8-858f-65d970ba446b.png)
+![preview of welcome.blade.php](https://user-images.githubusercontent.com/7189795/43691209-15b4d88e-98e7-11e8-8621-97ee8682fbaa.png)
 
-![Login Page](https://user-images.githubusercontent.com/7189795/40496998-24658388-5f49-11e8-96b3-e55876e354a6.png)
+![preview of login.blade.php](https://user-images.githubusercontent.com/7189795/43691210-15c172a6-98e7-11e8-93b4-dd608439aef5.png)
 
-![Dashboard](https://user-images.githubusercontent.com/7189795/40496999-24827a74-5f49-11e8-8d8c-b7b6996f4539.png)
+![preview of home.blade.php](https://user-images.githubusercontent.com/7189795/43691211-15cb26fc-98e7-11e8-94b5-e2c823a59eee.png)

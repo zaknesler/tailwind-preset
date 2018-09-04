@@ -36,6 +36,6 @@ class TailwindServiceProvider extends ServiceProvider
     protected function installMessage($command)
     {
         $command->info('Tailwind scaffolding installed successfully.');
-        $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
+        $command->comment('Please run "yarn && yarn dev" to compile your fresh scaffolding.');
     }
 }

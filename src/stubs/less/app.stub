@@ -1,74 +1,39 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/preflight";
- */
 @tailwind preflight;
-
-/**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
 @tailwind components;
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
 @tailwind utilities;
-
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example:
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
-
-html {
-    @apply .h-full;
-}
-
-body {
-    @apply .min-h-full .h-full;
-}
 
 [v-cloak] {
     @apply .hidden;
+}
+
+input[type=checkbox] {
+    @apply .relative .border .bg-grey-lighter .rounded-sm .outline-none .appearance-none .cursor-pointer .overflow-hidden .w-4 .h-4;
+
+    transition: background 100ms ease-in-out;
+
+    &:focus,
+    &:active,
+    &:checked {
+        @apply .border-blue;
+    }
+
+    &::after {
+        @apply .block .absolute .opacity-0;
+
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 20 20'%3E%3Cpath d='M0 11l2-2 5 5L18 3l2 2L7 18z'/%3E%3C/svg%3E");
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        top: 2px;
+        left: 2px;
+        transition: opacity 100ms ease-in-out;
+    }
+
+    &:checked {
+        @apply .bg-blue;
+
+        &::after {
+            @apply .opacity-100;
+        }
+    }
 }

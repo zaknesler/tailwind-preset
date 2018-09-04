@@ -28,8 +28,8 @@
                             @csrf
                         </form>
                     @else
-                        <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Login</a></li>
-                        <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Register</a></li>
+                        <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Sign in</a></li>
+                        <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Sign up</a></li>
                     @endauth
                 </ul>
             </div>

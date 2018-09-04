@@ -4,21 +4,21 @@
 [![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset)
 [![License](https://poser.pugx.org/zaknesler/tailwind-preset/license)](https://packagist.org/packages/zaknesler/tailwind-preset)
 
-This preset will replace the default Bootstrap scaffolding with a custom Tailwind CSS preset. This preset includes the Vue JavaScript framework, and is compiled using Laravel Mix and PurgeCSS.
+This is a Laravel front-end preset for Tailwind CSS. This preset will replace the default Bootstrap scaffolding, including the example Vue.js component. It will also compile the assets using Laravel Mix and PurgeCSS in order to generate the smallest files possible.
 
 [**Demo**](https://preset.zaknesler.com) &middot; [View Screenshots](preview.md)
 
 ### Installation
 
-> **Warning**: Installing presets will affect your existing views and assets. Presets should be installed on a fresh installation of Laravel.
+> **Warning**: Installing this preset will **overwrite** your existing views and assets, and should only be installed on a fresh installation of Laravel. Please use with caution.
 
-To install, you must first add it as a composer dependency. Laravel will automatically register the service provider for you.
+To install this preset, you must first require the composer dependency. Laravel will automatically register the service provider for you.
 
 ```
 composer require zaknesler/tailwind-preset
 ```
 
-Next, install either the `tailwind` preset or the `tailwind-auth` preset. The `tailwind-auth` preset includes authentication views, routes, and a controller.
+Next, install either the `tailwind` or the `tailwind-auth` preset. The `tailwind-auth` preset includes authentication views, routes, and a controller.
 
 ```
 php artisan preset tailwind
@@ -28,19 +28,21 @@ php artisan preset tailwind
 php artisan preset tailwind-auth
 ```
 
+> **Note:** If you install the `tailwind-auth` preset on a version of Laravel that is older than 5.7, you may delete the `views/auth/verify.blade.php` file, as it will not be used.
+
 Install the NPM packages using your favorite package manager.
 
 ```
-yarn install
+yarn // npm install
 ```
 
-Now just compile the assets using any of the Laravel build scripts (dev, prod, watch).
+Now you can compile the assets using any of the Laravel build scripts (dev, prod, watch).
 
 ```
-yarn run dev
+yarn dev // npm run dev
 ```
 
-Make sure your database is configured and migrated, and you're done. At this point, you are free to remove the composer dependency, as it is no longer needed.
+Ensure that your database is properly configured and migrated, and you're done! At this point, you may remove the composer dependency, as it is no longer needed.
 
 ```
 composer remove zaknesler/tailwind-preset

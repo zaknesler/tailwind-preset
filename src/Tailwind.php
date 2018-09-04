@@ -15,7 +15,7 @@ class Tailwind extends Preset
      */
     private static function setup()
     {
-        static::ensureComponentDirectoryExists();
+        static::ensureResourceDirectoriesExist();
         static::updatePackages();
 
         static::installScripts();
@@ -83,7 +83,7 @@ class Tailwind extends Preset
             'cross-env' => '^5.2',
             'laravel-mix' => '^2.1',
             'laravel-mix-purgecss' => '^2.2',
-            'less' => '^3.0',
+            'less' => '^3.8',
             'less-loader' => '^4.1',
             'tailwindcss' => '^0.6',
             'vue' => '^2.5',
@@ -105,18 +105,37 @@ class Tailwind extends Preset
     }
 
     /**
+     * Create any directories that do not exist.
+     *
+     * @return void
+     */
+    protected static function ensureResourceDirectoriesExist()
+    {
+        if (! file_exists(resource_path('less'))) {
+            File::makeDirectory(resource_path('less'), 0755, true);
+        }
+
+        if (! file_exists(resource_path('js'))) {
+            File::makeDirectory(resource_path('js'), 0755, true);
+        }
+
+        if (! file_exists(resource_path('js/components'))) {
+            File::makeDirectory(resource_path('js/components'), 0755, true);
+        }
+    }
+
+    /**
      * Install all JavaScript files.
      *
      * @return void
      */
     protected static function installScripts()
     {
+        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
         copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/js/app.stub', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('assets/js/bootstrap.js'));
-
-        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
+        copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
+        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
     }
 
     /**
@@ -126,13 +145,9 @@ class Tailwind extends Preset
      */
     protected static function installStyles()
     {
-        File::deleteDirectory(resource_path('assets/sass'));
+        File::deleteDirectory(resource_path('sass'));
 
-        if (! file_exists(resource_path('assets/less'))) {
-            File::makeDirectory(resource_path('assets/less'), 0777, true);
-        }
-
-        copy(__DIR__.'/stubs/less/app.stub', resource_path('assets/less/app.less'));
+        copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
     }
 
     /**
@@ -142,11 +157,9 @@ class Tailwind extends Preset
      */
     protected static function updateExampleComponent()
     {
-        File::cleanDirectory(resource_path('assets/js/components'));
-
         copy(
             __DIR__.'/stubs/js/components/ExampleComponent.stub',
-            resource_path('assets/js/components/ExampleComponent.vue')
+            resource_path('js/components/ExampleComponent.vue')
         );
     }
 }
