@@ -14,7 +14,7 @@
                     @else
                         <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('login') }}">Sign in</a></li>
 
-                        @if (Request::has('register'))
+                        @if (Route::has('register'))
                             <li class="mr-6"><a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('register') }}">Sign up</a></li>
                         @endif
                     @endauth
