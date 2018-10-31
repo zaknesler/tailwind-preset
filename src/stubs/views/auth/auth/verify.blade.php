@@ -18,11 +18,11 @@
                     <div class="w-full border border-t-0 rounded-b p-8">
                         <div class="text-lg text-grey-darkest text-center mb-8">Verify your email</div>
 
-                        <div class="text-center mb-8">
+                        <div class="md:w-64 mx-auto text-center mb-8">
                             @if (session('resent'))
-                                <p>A fresh verification link has been sent to your email.</p>
+                                <p>A fresh verification link has been sent to your email</p>
                             @else
-                                <p>Please check your email for the verification link.</p>
+                                <p>Please check your email for a verification link</p>
                             @endif
                         </div>
 
