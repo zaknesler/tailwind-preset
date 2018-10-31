@@ -79,14 +79,14 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'axios' => '^0.18',
-            'cross-env' => '^5.2',
-            'laravel-mix' => '^2.1',
-            'laravel-mix-purgecss' => '^2.2',
-            'less' => '^3.8',
-            'less-loader' => '^4.1',
-            'tailwindcss' => '^0.6',
-            'vue' => '^2.5',
+            'axios' => '^0.18.0',
+            'cross-env' => '^5.2.0',
+            'laravel-mix' => '^2.1.14',
+            'laravel-mix-purgecss' => '^3.0.0',
+            'less' => '^3.8.1',
+            'less-loader' => '^4.1.0',
+            'tailwindcss' => '^0.7.0',
+            'vue' => '^2.5.17',
         ];
     }
 
