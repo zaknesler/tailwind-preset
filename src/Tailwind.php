@@ -85,7 +85,7 @@ class Tailwind extends Preset
             'laravel-mix-purgecss' => '^3.0.0',
             'less' => '^3.8.1',
             'less-loader' => '^4.1.0',
-            'tailwindcss' => '^0.7.0',
+            'tailwindcss' => '^0.7.2',
             'vue' => '^2.5.17',
         ];
     }
