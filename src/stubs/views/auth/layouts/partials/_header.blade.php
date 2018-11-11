@@ -14,13 +14,13 @@
 
         <div :class="{ hidden: !displayNavigation }" class="w-full flex-grow md:flex md:items-center md:w-auto mt-6 md:mt-0">
             <div class="block md:flex-grow">
-                <ul class="flex flex-col sm:flex-row list-reset -mb-6 md:-mr-6 md:mb-0">
+                <ul class="flex flex-col md:flex-row list-reset -mb-6 md:-mr-6 md:mb-0">
                     <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('home') }}">Home</a></li>
                 </ul>
             </div>
 
             <div class="mt-6 md:mt-0">
-                <ul class="flex flex-col sm:flex-row list-reset -mb-6 md:-mr-6 md:mb-0">
+                <ul class="flex flex-col md:flex-row list-reset -mb-6 md:-mr-6 md:mb-0">
                     @auth
                         <li class="mb-6 md:mr-6 md:mb-0"><a class="block md:inline text-blue-dark no-underline hover:underline" href="#" @click.prevent="logout">Logout</a></li>
 
