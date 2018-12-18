@@ -79,14 +79,14 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'axios' => '^0.18.0',
-            'cross-env' => '^5.2.0',
-            'laravel-mix' => '^2.1.14',
-            'laravel-mix-purgecss' => '^3.0.0',
-            'less' => '^3.8.1',
-            'less-loader' => '^4.1.0',
-            'tailwindcss' => '^0.7.2',
-            'vue' => '^2.5.17',
+            'axios' => '^0.18',
+            'cross-env' => '^5.2',
+            'laravel-mix' => '^4.0',
+            'laravel-mix-purgecss' => '^3.0',
+            'less' => '^3.9',
+            'less-loader' => '^4.1',
+            'tailwindcss' => '^0.7',
+            'vue' => '^2.5',
         ];
     }
 
@@ -111,17 +111,12 @@ class Tailwind extends Preset
      */
     protected static function ensureResourceDirectoriesExist()
     {
-        if (! file_exists(resource_path('less'))) {
-            File::makeDirectory(resource_path('less'), 0755, true);
-        }
-
-        if (! file_exists(resource_path('js'))) {
-            File::makeDirectory(resource_path('js'), 0755, true);
-        }
-
-        if (! file_exists(resource_path('js/components'))) {
-            File::makeDirectory(resource_path('js/components'), 0755, true);
-        }
+        collect(['less', 'js', 'js/components'])
+            ->each(function($dir) {
+                if (! file_exists(resource_path($dir))) {
+                    File::makeDirectory(resource_path($dir), 0755, true);
+                }
+            });
     }
 
     /**
@@ -131,6 +126,9 @@ class Tailwind extends Preset
      */
     protected static function installScripts()
     {
+        File::delete(base_path('tailwind.js'));
+        File::delete(base_path('webpack.mix.js'));
+
         copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
         copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
