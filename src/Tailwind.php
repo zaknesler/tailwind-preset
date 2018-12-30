@@ -112,7 +112,7 @@ class Tailwind extends Preset
     protected static function ensureResourceDirectoriesExist()
     {
         collect(['less', 'js', 'js/components'])
-            ->each(function($dir) {
+            ->each(function ($dir) {
                 if (! file_exists(resource_path($dir))) {
                     File::makeDirectory(resource_path($dir), 0755, true);
                 }
