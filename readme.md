@@ -6,7 +6,7 @@
 
 This is a Laravel front-end preset for Tailwind CSS. This preset will replace the default Bootstrap scaffolding, including the example Vue.js component. It will also compile the assets using Laravel Mix and PurgeCSS in order to generate the smallest files possible.
 
-[**Demo**](https://preset.zaknesler.com) &middot; [View Screenshots](preview.md)
+[**Demo**](https://preset.zaknesler.com) &middot; [View Screenshots](screenshots.md)
 
 ### Installation
 
