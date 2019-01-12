@@ -9,11 +9,5 @@ const app = new Vue({
 
     data: {
         displayNavigation: false
-    },
-
-    methods: {
-        logout() {
-            this.$refs.logoutForm.submit()
-        }
     }
 })
