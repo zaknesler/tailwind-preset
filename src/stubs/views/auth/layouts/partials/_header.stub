@@ -3,7 +3,7 @@
 <div class="p-6 w-full bg-grey-lightest border-b">
     <div class="max-w-2xl mx-auto flex flex-wrap items-center justify-between">
         <div class="mr-6 text-lg">
-            <a class="font-medium text-grey-darker no-underline hover:underline" href="/">
+            <a class="font-medium text-grey-darker hover:text-grey-darkest no-underline" href="/">
                 {{ config('app.name') }}
             </a>
         </div>
@@ -20,7 +20,7 @@
             <div class="block md:flex-grow">
                 <ul class="-mb-6 md:-mr-6 md:mb-0 flex flex-col md:flex-row list-reset">
                     <li class="mb-6 md:mr-6 md:mb-0">
-                        <a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('home') }}">
+                        <a class="block md:inline text-blue-dark hover:text-blue-darker no-underline" href="{{ route('home') }}">
                             Home
                         </a>
                     </li>
@@ -31,7 +31,7 @@
                 <ul class="-mb-6 md:-mr-6 md:mb-0 flex flex-col md:flex-row list-reset">
                     @auth
                         <li class="mb-6 md:mr-6 md:mb-0">
-                            <a class="block md:inline text-blue-dark no-underline hover:underline" href="#" onclick="document.querySelector('#logoutForm').submit()">
+                            <a class="block md:inline text-blue-dark hover:text-blue-darker no-underline" href="#" onclick="document.querySelector('#logoutForm').submit()">
                                 Logout
                             </a>
                         </li>
@@ -41,13 +41,13 @@
                         </form>
                     @else
                         <li class="mb-6 md:mr-6 md:mb-0">
-                            <a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('login') }}">
+                            <a class="block md:inline text-blue-dark hover:text-blue-darker no-underline" href="{{ route('login') }}">
                                 Sign in
                             </a>
                         </li>
 
                         <li class="mb-6 md:mr-6 md:mb-0">
-                            <a class="block md:inline text-blue-dark no-underline hover:underline" href="{{ route('register') }}">
+                            <a class="block md:inline text-blue-dark hover:text-blue-darker no-underline" href="{{ route('register') }}">
                                 Sign up
                             </a>
                         </li>

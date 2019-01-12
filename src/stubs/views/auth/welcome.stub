@@ -10,20 +10,20 @@
                 <ul class="-mr-6 list-reset flex items-center">
                     @auth
                         <li class="mr-6">
-                            <a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('home') }}">
+                            <a class="font-semibold text-blue-dark hover:text-blue-darker no-underline" href="{{ route('home') }}">
                                 Home
                             </a>
                         </li>
                     @else
                         <li class="mr-6">
-                            <a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('login') }}">
+                            <a class="font-semibold text-blue-dark hover:text-blue-darker no-underline" href="{{ route('login') }}">
                                 Sign in
                             </a>
                         </li>
 
                         @if (Route::has('register'))
                             <li class="mr-6">
-                                <a class="font-semibold text-blue-dark no-underline hover:underline" href="{{ route('register') }}">
+                                <a class="font-semibold text-blue-dark hover:text-blue-darker no-underline" href="{{ route('register') }}">
                                     Sign up
                                 </a>
                             </li>
@@ -37,43 +37,43 @@
 
         <ul class="-mb-4 sm:-mr-6 mt-6 list-reset flex flex-col sm:flex-row items-center">
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://laravel.com/docs">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laravel.com/docs">
                     Docs
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://laracasts.com">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laracasts.com">
                     Laracasts
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://laravel-news.com">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laravel-news.com">
                     News
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://blog.laravel.com">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://blog.laravel.com">
                     Blog
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://nova.laravel.com">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://nova.laravel.com">
                     Nova
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://forge.laravel.com">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://forge.laravel.com">
                     Forge
                 </a>
             </li>
 
             <li class="mb-4 sm:mr-6">
-                <a class="text-blue-dark no-underline hover:underline" href="https://github.com/laravel/laravel">
+                <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://github.com/laravel/laravel">
                     GitHub
                 </a>
             </li>
