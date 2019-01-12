@@ -34,7 +34,9 @@ class Tailwind extends Preset
     {
         static::setup();
 
-        File::copyDirectory(__DIR__.'/stubs/views/default', resource_path('views'));
+        static::installViews('default', [
+            'welcome.stub',
+        ]);
     }
 
     /**
@@ -47,9 +49,87 @@ class Tailwind extends Preset
         static::setup();
         static::installAuthRoutes();
 
-        file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+        static::makeViewDirectories([
+            'auth/passwords',
+            'errors',
+            'layouts/partials',
+        ]);
 
-        File::copyDirectory(__DIR__.'/stubs/views/auth', resource_path('views'));
+        static::installViews('auth', [
+            'auth/passwords/email.stub',
+            'auth/passwords/reset.stub',
+            'auth/login.stub',
+            'auth/register.stub',
+            'auth/verify.stub',
+            'welcome.stub',
+            'errors/404.stub',
+            'errors/500.stub',
+            'errors/503.stub',
+            'layouts/partials/_content.stub',
+            'layouts/partials/_header.stub',
+            'layouts/base.stub',
+            'home.stub',
+            'welcome.stub',
+        ]);
+
+        file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+    }
+
+    /**
+     * Update the given package array.
+     *
+     * @param  array  $packages
+     * @return array
+     */
+    protected static function updatePackageArray(array $packages)
+    {
+        return [
+            'axios' => '^0.18',
+            'cross-env' => '^5.2',
+            'laravel-mix' => '^4.0',
+            'laravel-mix-purgecss' => '^4.0',
+            'less' => '^3.9',
+            'less-loader' => '^4.1',
+            'tailwindcss' => '^0.7',
+            'vue' => '^2.5',
+            'vue-template-compiler' => '^2.5',
+        ];
+    }
+
+    /**
+     * Create view directories.
+     *
+     * @param  array  $directories
+     * @return void
+     */
+    protected static function makeViewDirectories($directories)
+    {
+        foreach ($directories as $directory) {
+            if (! is_dir($directory = resource_path('views/'.$directory))) {
+                File::makeDirectory($directory, 0755, true);
+            }
+        }
+    }
+
+    /**
+     * Copy the view stubs over to the application and rename them.
+     *
+     * @param  string  $baseDirectory
+     * @param  array  $views
+     * @return void
+     */
+    protected static function installViews($baseDirectory, $views)
+    {
+        // All files published by this package use a ".stub" file extension. The
+        // purpose of doing this is to prevent any of the template files from
+        // being confused with the files actually published by this preset.
+
+        foreach ($views as $view) {
+            File::copy(
+                __DIR__.'/stubs/views/'.$baseDirectory.'/'.$view,
+                resource_path('views/'.str_replace('stub', 'blade.php', $view))
+            );
+        }
     }
 
     /**
@@ -68,26 +148,6 @@ class Tailwind extends Preset
             "\nAuth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n",
             FILE_APPEND
         );
-    }
-
-    /**
-     * Update the given package array.
-     *
-     * @param  array  $packages
-     * @return array
-     */
-    protected static function updatePackageArray(array $packages)
-    {
-        return [
-            'axios' => '^0.18',
-            'cross-env' => '^5.2',
-            'laravel-mix' => '^4.0',
-            'laravel-mix-purgecss' => '^3.0',
-            'less' => '^3.9',
-            'less-loader' => '^4.1',
-            'tailwindcss' => '^0.7',
-            'vue' => '^2.5',
-        ];
     }
 
     /**
@@ -111,10 +171,10 @@ class Tailwind extends Preset
      */
     protected static function ensureResourceDirectoriesExist()
     {
-        collect(['less', 'js', 'js/components'])
-            ->each(function ($dir) {
-                if (! file_exists(resource_path($dir))) {
-                    File::makeDirectory(resource_path($dir), 0755, true);
+        collect(['less', 'js/components'])
+            ->each(function ($directory) {
+                if (! is_dir(resource_path($directory))) {
+                    File::makeDirectory(resource_path($directory), 0755, true);
                 }
             });
     }
@@ -129,11 +189,11 @@ class Tailwind extends Preset
         File::delete(base_path('tailwind.js'));
         File::delete(base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
-        copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
+        File::copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
+        File::copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
+        File::copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
+        File::copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
     }
 
     /**
@@ -145,7 +205,7 @@ class Tailwind extends Preset
     {
         File::deleteDirectory(resource_path('sass'));
 
-        copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
+        File::copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
     }
 
     /**
@@ -155,7 +215,7 @@ class Tailwind extends Preset
      */
     protected static function updateExampleComponent()
     {
-        copy(
+        File::copy(
             __DIR__.'/stubs/js/components/ExampleComponent.stub',
             resource_path('js/components/ExampleComponent.vue')
         );
