@@ -87,12 +87,12 @@ class Tailwind extends Preset
             'axios' => '^0.18',
             'cross-env' => '^5.2',
             'laravel-mix' => '^4.0',
-            'laravel-mix-purgecss' => '^4.0',
+            'laravel-mix-purgecss' => '^4.1',
             'less' => '^3.9',
             'less-loader' => '^4.1',
             'tailwindcss' => '^0.7',
-            'vue' => '^2.5',
-            'vue-template-compiler' => '^2.5',
+            'vue' => '^2.6',
+            'vue-template-compiler' => '^2.6',
         ];
     }
 
