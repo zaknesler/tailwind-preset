@@ -15,7 +15,7 @@
 }
 
 .form-input {
-    @apply .px-4 .py-3 .w-full .block .appearance-none .shadow-transition .border .border-gray-200 .bg-gray-100 .text-gray-700 .rounded-lg;
+    @apply .px-4 .py-3 .w-full .block .appearance-none .shadow-transition .border .border-gray-300 .bg-gray-100 .text-gray-700 .rounded-lg;
 
     &:focus {
         @apply .outline-none .shadow-outline;
@@ -27,9 +27,7 @@
 }
 
 .form-checkbox {
-    @apply .w-4 .h-4 .relative .bg-gray-200 .border .border-gray-300 .rounded .outline-none .appearance-none .cursor-pointer .overflow-hidden;
-
-    transition: background 100ms ease-in-out, border-color 100ms ease-in-out;
+    @apply .w-4 .h-4 .relative .bg-gray-100 .border .border-gray-300 .rounded .outline-none .appearance-none .cursor-pointer .overflow-hidden;
 
     &:focus {
         @apply .outline-none .shadow-outline;
@@ -37,8 +35,6 @@
 
     &:checked {
         @apply .bg-brand-500 .border-brand-500;
-
-        transition: background 100ms ease-in-out, border-color 100ms ease-in-out;
 
         &::after {
             @apply .opacity-100;
@@ -54,12 +50,11 @@
         height: calc(100% - 6px);
         top: 3px;
         left: 3px;
-        transition: opacity 100ms ease-in-out;
     }
 }
 
 .btn {
-    @apply .px-6 .py-3 .rounded-lg .appearance-none .text-sm .font-semibold .shadow-transition  .cursor-pointer .border-0 .bg-brand-500 .text-white;
+    @apply .px-6 .py-3 .rounded-lg .appearance-none .text-sm .font-semibold .shadow-transition .cursor-pointer .border-0 .bg-brand-500 .text-white;
 
     &:hover {
         @apply .bg-brand-600;
