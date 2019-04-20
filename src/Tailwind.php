@@ -201,6 +201,7 @@ class Tailwind extends Preset
     protected static function installStyles()
     {
         File::copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
+        File::copy(__DIR__.'/stubs/less/partials/_form.stub', resource_path('less/partials/_form.less'));
     }
 
     /**
