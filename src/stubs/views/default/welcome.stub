@@ -4,54 +4,49 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name') }}</title>
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased min-h-full h-full">
+    <body class="font-sans font-normal text-base tracking-normal leading-normal bg-white text-gray-700 min-h-full h-full">
         <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
-            <h1 class="font-light text-5xl">{{ config('app.name') }}</h1>
+            <h1 class="mb-8 leading-tight text-5xl text-gray-700">{{ config('app.name') }}</h1>
 
-            <ul class="-mb-4 sm:-mr-6 mt-6 list-reset flex flex-col sm:flex-row items-center">
+            <ul class="-mb-4 sm:-mr-6 list-reset flex flex-col sm:flex-row items-center">
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laravel.com/docs">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://laravel.com/docs">
                         Docs
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laracasts.com">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://laracasts.com">
                         Laracasts
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://laravel-news.com">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://laravel-news.com">
                         News
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://blog.laravel.com">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://blog.laravel.com">
                         Blog
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://nova.laravel.com">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://nova.laravel.com">
                         Nova
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://forge.laravel.com">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://forge.laravel.com">
                         Forge
                     </a>
                 </li>
-
                 <li class="mb-4 sm:mr-6">
-                    <a class="text-blue-dark hover:text-blue-darker no-underline" href="https://github.com/laravel/laravel">
+                    <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://github.com/laravel/laravel">
                         GitHub
                     </a>
                 </li>

@@ -1,5 +1,0 @@
-<div class="p-6 w-full">
-    <div class="max-w-lg mx-auto">
-        @yield('content')
-    </div>
-</div>

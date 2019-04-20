@@ -11,7 +11,7 @@
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans font-normal roman text-base tracking-normal leading-normal bg-white text-grey-darker antialiased min-h-full h-full">
+    <body class="font-sans font-normal text-base tracking-normal leading-normal bg-white text-gray-700 min-h-full h-full">
         <div id="app" class="min-h-full h-full" v-cloak>
             @hasSection('show-header')
                 @include('layouts/partials/_header')
@@ -22,7 +22,11 @@
             @endif
 
             @hasSection('content')
-                @include('layouts/partials/_content')
+                <div class="p-6 w-full">
+                    <div class="max-w-2xl mx-auto">
+                        @yield('content')
+                    </div>
+                </div>
             @endif
         </div>
     </body>
