@@ -62,6 +62,7 @@ class Tailwind extends Preset
             'auth/register.stub',
             'auth/verify.stub',
             'errors/404.stub',
+            'errors/419.stub',
             'errors/500.stub',
             'errors/503.stub',
             'layouts/partials/_header.stub',
