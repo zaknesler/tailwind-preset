@@ -10,9 +10,13 @@ This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). 
 
 <details>
 <summary>View screenshots</summary>
+
 ![welcome.blade.php](https://user-images.githubusercontent.com/7189795/56762097-0127ea00-676d-11e9-9fc1-b299470fdb6b.png)
+
 ![login.blade.php](https://user-images.githubusercontent.com/7189795/56762098-0127ea00-676d-11e9-9a54-2becb8b584df.png)
+
 ![home.blade.php](https://user-images.githubusercontent.com/7189795/56762095-0127ea00-676d-11e9-8ebd-c267f7541c86.png)
+
 </details>
 
 ### Warning
