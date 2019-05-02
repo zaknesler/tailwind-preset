@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset)
 [![License](https://poser.pugx.org/zaknesler/tailwind-preset/license)](https://packagist.org/packages/zaknesler/tailwind-preset)
 
-This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset replaces the default Bootstrap scaffolding, including the example Vue.js component. It also compile the assets using [Laravel Mix](https://github.com/jeffreyway/laravel-mix) for convenience and [PurgeCSS](https://github.com/fullhuman/purgecss) to generate the smallest files possible.
+This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset replaces the default Bootstrap scaffolding, including the example Vue.js component. It also compiles the assets using [Laravel Mix](https://github.com/jeffreyway/laravel-mix) for convenience and [PurgeCSS](https://github.com/fullhuman/purgecss) to generate the smallest files possible.
 
 **[Live Demo](https://preset.zaknesler.com)**
 
