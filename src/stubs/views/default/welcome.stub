@@ -14,7 +14,7 @@
         <div class="min-h-full h-full w-full flex flex-col items-center justify-center">
             <h1 class="mb-8 leading-tight text-5xl text-gray-700">{{ config('app.name') }}</h1>
 
-            <ul class="-mb-4 sm:-mr-6 list-reset flex flex-col sm:flex-row items-center">
+            <ul class="-mb-4 sm:-mr-6 flex flex-col sm:flex-row items-center">
                 <li class="mb-4 sm:mr-6">
                     <a class="font-semibold text-brand-600 hover:text-brand-700 no-underline" href="https://laravel.com/docs">
                         Docs
