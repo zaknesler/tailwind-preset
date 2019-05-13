@@ -61,11 +61,10 @@ class Tailwind extends Preset
             'auth/login.stub',
             'auth/register.stub',
             'auth/verify.stub',
-            'welcome.stub',
             'errors/404.stub',
+            'errors/419.stub',
             'errors/500.stub',
             'errors/503.stub',
-            'layouts/partials/_content.stub',
             'layouts/partials/_header.stub',
             'layouts/base.stub',
             'home.stub',
@@ -90,7 +89,7 @@ class Tailwind extends Preset
             'laravel-mix-purgecss' => '^4.1',
             'less' => '^3.9',
             'less-loader' => '^4.1',
-            'tailwindcss' => '^0.7',
+            'tailwindcss' => '^1.0',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
         ];
@@ -171,7 +170,7 @@ class Tailwind extends Preset
      */
     protected static function ensureResourceDirectoriesExist()
     {
-        collect(['less', 'js/components'])
+        collect(['less/partials', 'js/components'])
             ->each(function ($directory) {
                 if (! is_dir(resource_path($directory))) {
                     File::makeDirectory(resource_path($directory), 0755, true);
@@ -186,10 +185,9 @@ class Tailwind extends Preset
      */
     protected static function installScripts()
     {
-        File::delete(base_path('tailwind.js'));
         File::delete(base_path('webpack.mix.js'));
 
-        File::copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.js'));
+        File::copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.config.js'));
         File::copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
         File::copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
@@ -203,9 +201,8 @@ class Tailwind extends Preset
      */
     protected static function installStyles()
     {
-        File::deleteDirectory(resource_path('sass'));
-
         File::copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
+        File::copy(__DIR__.'/stubs/less/partials/_form.stub', resource_path('less/partials/_form.less'));
     }
 
     /**
