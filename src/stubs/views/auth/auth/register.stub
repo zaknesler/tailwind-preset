@@ -123,11 +123,9 @@
                         <div class="mt-8 px-8 py-6 bg-gray-100 flex items-center justify-between rounded-b-lg">
                             <input tabindex="4" class="btn px-8" type="submit" value="Sign up" />
 
-                            @if (Route::has('register'))
-                                <div class="text-sm text-gray-600">
-                                    Have an account? <a tabindex="6" class="font-semibold text-gray-700 no-underline hover:underline" href="{{ route('login') }}">Sign in</a>
-                                </div>
-                            @endif
+                            <div class="text-sm text-gray-600">
+                                Have an account? <a tabindex="6" class="font-semibold text-gray-700 no-underline hover:underline" href="{{ route('login') }}">Sign in</a>
+                            </div>
                         </div>
                     </form>
                 </div>
