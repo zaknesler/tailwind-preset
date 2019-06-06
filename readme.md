@@ -54,3 +54,15 @@ yarn dev // npm run dev
 ```
 
 Ensure that your database is properly configured and migrated, and you're done!
+
+### EditorConfig
+
+To ensure proper guide highlighting in your text editor, it is recommended that you add the following to the end of the `.editorconfig` file:
+
+```
+[{tailwind.config.js,webpack.mix.js}]
+indent_style = space
+indent_size = 2
+```
+
+Alternatively, you may reindent both files to use an indent size of four, which is the default in a Laravel project.
