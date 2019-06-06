@@ -12,7 +12,7 @@
                 <div class="my-6 text-lg text-gray-600">Page expired (Try refreshing)</div>
 
                 <div>
-                    <a class="text-brand-600 hover:text-brand-700 no-underline" href="{{ route('home') }}">&larr; Home</a>
+                    <a class="text-brand-600 hover:text-brand-800 no-underline" href="{{ route('home') }}">&larr; Home</a>
                 </div>
             </div>
         </div>
