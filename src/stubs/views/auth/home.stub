@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 
 @section('title', 'Home')
 @section('show-header', true)

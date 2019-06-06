@@ -1,4 +1,4 @@
-@extends('layouts/base')
+@extends('layouts.base')
 
 @section('title', 'Welcome')
 @section('show-header', false)
