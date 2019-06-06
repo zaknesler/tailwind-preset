@@ -1,16 +1,13 @@
 require('laravel-mix-purgecss')
 
 const mix = require('laravel-mix')
-const tailwind = require('tailwindcss')
 
 mix.setPublicPath('public')
-  .less('resources/less/app.less', 'public/css')
+  .postCss('resources/css/tailwind.css', 'public/css/app.css', [
+    require('tailwindcss'),
+    require('autoprefixer')
+  ])
   .js('resources/js/app.js', 'public/js')
-  .options({
-    postCss: [
-      tailwind('./tailwind.config.js'),
-    ]
-  })
 
 if (mix.inProduction()) {
   mix.purgeCss().version()

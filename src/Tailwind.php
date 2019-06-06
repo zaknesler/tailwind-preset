@@ -84,6 +84,8 @@ class Tailwind extends Preset
     {
         return [
             'axios' => '^0.18',
+            '@tailwindcss/custom-forms' => '^0.1',
+            'autoprefixer' => '^9.6',
             'cross-env' => '^5.2',
             'laravel-mix' => '^4.0',
             'laravel-mix-purgecss' => '^4.1',
