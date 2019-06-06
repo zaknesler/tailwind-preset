@@ -119,10 +119,6 @@ class Tailwind extends Preset
      */
     protected static function installViews($baseDirectory, $views)
     {
-        // All files published by this package use a ".stub" file extension. The
-        // purpose of doing this is to prevent any of the template files from
-        // being confused with the files actually published by this preset.
-
         foreach ($views as $view) {
             File::copy(
                 __DIR__.'/stubs/views/'.$baseDirectory.'/'.$view,
