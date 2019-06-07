@@ -22,7 +22,7 @@
                 <div class="my-6 mx-auto w-16 h-px block bg-brand-400"></div>
 
                 <div>
-                    Didn't get the email? <a href="{{ route('password.request') }}" class="font-semibold text-brand-600 hover:text-brand-800">Resend it</a>
+                    Didn't get the email? <a href="{{ route('verification.resend') }}" class="font-semibold text-brand-600 hover:text-brand-800">Resend it</a>
                 </div>
             </div>
         </div>
