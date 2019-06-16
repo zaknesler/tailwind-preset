@@ -6,18 +6,18 @@
 @section('content-full')
     <div class="h-full flex">
         <div class="p-6 m-auto max-w-xs w-full">
-            <div class="mb-6 flex items-center justify-center">
+            <div class="flex items-center justify-center">
                 <a href="/" class="font-semibold text-gray-700 hover:text-gray-900 no-underline">{{ config('app.name') }}</a>
             </div>
 
-            <form action="{{ route('register') }}" method="POST" class="w-full">
+            <div class="mt-6 mx-auto max-w-xs text-center text-gray-600">
+                Create a new account
+            </div>
+
+            <form action="{{ route('register') }}" method="POST" class="mt-6">
                 @csrf
 
-                <div class="mb-6 mx-auto max-w-xs text-center text-gray-600">
-                    Create a new account
-                </div>
-
-                <div class="mb-3">
+                <div>
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('name', 'text-red-700') }}">Name</span>
                         <input
@@ -37,7 +37,7 @@
                     </label>
                 </div>
 
-                <div class="mb-3">
+                <div class="mt-4">
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">Email</span>
                         <input
@@ -56,7 +56,7 @@
                     </label>
                 </div>
 
-                <div class="mb-3">
+                <div class="mt-4">
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">Password</span>
                         <input
@@ -74,7 +74,7 @@
                     </label>
                 </div>
 
-                <div class="mb-6">
+                <div class="mt-4">
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('password_confirmation', 'text-red-700') }}">Confirm Password</span>
                         <input
@@ -92,7 +92,7 @@
                     </label>
                 </div>
 
-                <div class="text-sm flex items-center justify-between">
+                <div class="mt-6 text-sm flex items-center justify-between">
                     <div>
                         Have an account? <a tabindex="6" href="{{ route('login') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">Sign in</a>
                     </div>

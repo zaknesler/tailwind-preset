@@ -14,9 +14,9 @@
     <body class="font-sans font-normal text-base tracking-normal leading-normal bg-white text-gray-700 h-full">
         <div id="app" class="h-full flex" v-cloak>
             <div class="p-6 m-auto text-center font-semibold">
-                <h1 class="mb-8 leading-tight text-4xl text-gray-700">{{ config('app.name') }}</h1>
+                <h1 class="leading-tight text-4xl text-gray-700">{{ config('app.name') }}</h1>
 
-                <ul class="-mb-4 sm:-mr-6 block sm:flex items-baseline text-brand-600">
+                <ul class="-mb-4 sm:-mr-6 mt-8 block sm:flex items-baseline text-brand-600">
                     <li class="mb-4 sm:mr-6">
                         <a class="hover:text-brand-800" href="https://laravel.com/docs">Docs</a>
                     </li>

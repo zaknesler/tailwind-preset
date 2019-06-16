@@ -4,7 +4,14 @@
 @section('show-header', true)
 
 @section('content')
-    <example-component title="Dashboard">
-        You are signed in!
+    <div class="border rounded-lg">
+        <div class="px-4 py-3 border-b bg-gray-100 text-gray-600 font-semibold rounded-t-lg">Dashboard</div>
+        <div class="p-4 bg-white text-gray-700 rounded-b-lg overflow-hidden">
+            You are signed in!
+        </div>
+    </div>
+
+    <example-component title="Dashboard" class="mt-6">
+        This is an example Vue component.
     </example-component>
 @endsection
