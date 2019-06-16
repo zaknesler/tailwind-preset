@@ -13,9 +13,9 @@
             <div class="mt-6 mx-auto max-w-xs text-center">
                 <div class="text-gray-600">
                     @if (session('resent'))
-                        We've sent you a fresh verification link.
+                        We have sent you a fresh verification link, please check your email.
                     @else
-                        You must verify your email address! Check your email for a link.
+                        You must verify your email address before proceeding. Please check your email for a verification link.
                     @endif
                 </div>
 
