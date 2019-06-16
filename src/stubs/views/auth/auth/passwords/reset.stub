@@ -39,7 +39,7 @@
                     </label>
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-3">
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">New Password</span>
                         <input
@@ -57,7 +57,7 @@
                     </label>
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-3">
                     <label>
                         <span class="text-xs font-medium text-gray-600 {{ $errors->first('password_confirmation', 'text-red-700') }}">Confirm New Password</span>
                         <input
