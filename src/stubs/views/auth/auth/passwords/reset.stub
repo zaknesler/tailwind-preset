@@ -28,7 +28,7 @@
                             tabindex="1"
                             type="email"
                             name="email"
-                            value="{{ $email ?? old('email') }}"
+                            value="{{ old('email') ?? $email }}"
                             class="mt-1 form-input rounded-lg focus:shadow-transition block w-full {{ $errors->first('email', 'border-red-500') }}"
                             placeholder="you@example.com"
                         />
