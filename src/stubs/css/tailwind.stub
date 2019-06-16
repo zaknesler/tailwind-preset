@@ -1,0 +1,26 @@
+[v-cloak] {
+    display: none;
+}
+
+@tailwind base;
+@tailwind components;
+
+@variants focus {
+    .shadow-transition {
+        transition: box-shadow 100ms ease-in-out;
+    }
+}
+
+.btn {
+    @apply px-6 py-3 bg-brand-500 font-semibold text-white rounded-lg border-none appearance-none;
+}
+
+.btn:hover {
+    @apply bg-brand-600;
+}
+
+.btn:focus {
+    @apply outline-none shadow-outline shadow-transition;
+}
+
+@tailwind utilities;

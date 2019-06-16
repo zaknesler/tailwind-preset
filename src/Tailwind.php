@@ -83,12 +83,12 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'axios' => '^0.18',
+            '@tailwindcss/custom-forms' => '^0.1',
+            'autoprefixer' => '^9.6',
+            'axios' => '^0.19',
             'cross-env' => '^5.2',
             'laravel-mix' => '^4.0',
             'laravel-mix-purgecss' => '^4.1',
-            'less' => '^3.9',
-            'less-loader' => '^4.1',
             'tailwindcss' => '^1.0',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
@@ -119,10 +119,6 @@ class Tailwind extends Preset
      */
     protected static function installViews($baseDirectory, $views)
     {
-        // All files published by this package use a ".stub" file extension. The
-        // purpose of doing this is to prevent any of the template files from
-        // being confused with the files actually published by this preset.
-
         foreach ($views as $view) {
             File::copy(
                 __DIR__.'/stubs/views/'.$baseDirectory.'/'.$view,
@@ -170,7 +166,7 @@ class Tailwind extends Preset
      */
     protected static function ensureResourceDirectoriesExist()
     {
-        collect(['less/partials', 'js/components'])
+        collect(['css', 'js/components'])
             ->each(function ($directory) {
                 if (! is_dir(resource_path($directory))) {
                     File::makeDirectory(resource_path($directory), 0755, true);
@@ -201,8 +197,7 @@ class Tailwind extends Preset
      */
     protected static function installStyles()
     {
-        File::copy(__DIR__.'/stubs/less/app.stub', resource_path('less/app.less'));
-        File::copy(__DIR__.'/stubs/less/partials/_form.stub', resource_path('less/partials/_form.less'));
+        File::copy(__DIR__.'/stubs/css/tailwind.stub', resource_path('css/tailwind.css'));
     }
 
     /**

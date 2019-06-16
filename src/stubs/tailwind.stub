@@ -3,14 +3,20 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   theme: {
     extend: {
-      padding: {
-        '11': '2.75rem'
-      },
       colors: {
-        brand: { ...defaultTheme.colors.blue }
-      }
+        brand: { ...defaultTheme.colors.teal }
+      },
+      boxShadow: theme => ({
+        outline: `0 0 0 3px ${theme('colors.brand.500')}60`
+      }),
+      customForms: theme => ({
+        focusBorderColor: theme('colors.brand.400'),
+        focusShadow: theme('boxShadow.outline')
+      })
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/custom-forms')
+  ]
 }
