@@ -10,12 +10,12 @@ This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). 
 
 <details>
 <summary>View screenshots</summary>
+    
+![welcome.blade.php](https://user-images.githubusercontent.com/7189795/59567082-dfddce80-9036-11e9-952d-a535f21478e1.png)
 
-![welcome.blade.php](https://user-images.githubusercontent.com/7189795/56762097-0127ea00-676d-11e9-9fc1-b299470fdb6b.png)
+![login.blade.php](https://user-images.githubusercontent.com/7189795/59567081-dfddce80-9036-11e9-8401-257eeb78a07c.png)
 
-![login.blade.php](https://user-images.githubusercontent.com/7189795/56762098-0127ea00-676d-11e9-9a54-2becb8b584df.png)
-
-![home.blade.php](https://user-images.githubusercontent.com/7189795/56762095-0127ea00-676d-11e9-8ebd-c267f7541c86.png)
+![home.blade.php](https://user-images.githubusercontent.com/7189795/59567080-dfddce80-9036-11e9-81be-20044b2b6cd4.png)
 
 </details>
 
