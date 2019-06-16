@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: { ...defaultTheme.colors.blue }
+        brand: { ...defaultTheme.colors.teal }
       },
       boxShadow: theme => ({
         outline: `0 0 0 3px ${theme('colors.brand.500')}60`
