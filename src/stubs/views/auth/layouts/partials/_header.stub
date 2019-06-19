@@ -23,26 +23,26 @@
 
         <div
             id="#headerNav"
-            class="py-3 sm:p-0 sm:mr-6 w-full sm:w-auto sm:flex sm:flex-grow sm:items-baseline shadow-inner sm:shadow-none"
+            class="py-3 sm:p-0 sm:mr-6 w-full sm:w-auto sm:flex sm:flex-grow sm:items-center shadow-inner sm:shadow-none"
             :class="{ hidden: !displayNavigation }"
             :aria-expanded="displayNavigation"
         >
-            <nav class="sm:ml-6 block sm:flex-1" aria-label="Left navigation">
-                <ul class="sm:-ml-4 sm:flex sm:items-baseline">
-                    <li><a href="{{ route('home') }}" class="px-6 py-3 sm:p-0 sm:ml-4 block sm:inline text-brand-600 hover:text-brand-800 no-underline">Home</a></li>
+            <nav class="sm:flex-1" aria-label="Left navigation">
+                <ul class="sm:flex sm:items-baseline">
+                    <li><a href="{{ route('home') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">Home</a></li>
                 </ul>
             </nav>
 
-            <nav aria-label="Right navigation">
-                <ul class="sm:-ml-4 sm:flex sm:items-baseline">
+            <nav class="sm:flex sm:items-center" aria-label="Right navigation">
+                <ul class="sm:flex sm:items-baseline">
                     @auth
                         <li>
-                            <a href="#" class="px-6 py-3 sm:p-0 sm:ml-4 block sm:inline text-brand-600 hover:text-brand-800 no-underline" onclick="document.querySelector('#logoutForm').submit()">Logout</a>
+                            <a href="#" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline" onclick="document.querySelector('#logoutForm').submit()">Logout</a>
                             <form action="{{ route('logout') }}" method="POST" id="logoutForm" class="hidden">@csrf</form>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}" class="px-6 py-3 sm:p-0 sm:ml-4 block sm:inline text-brand-600 hover:text-brand-800 no-underline">Sign in</a></li>
-                        <li><a href="{{ route('register') }}" class="px-6 py-3 sm:p-0 sm:ml-4 block sm:inline text-brand-600 hover:text-brand-800 no-underline">Sign up</a></li>
+                        <li><a href="{{ route('login') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">Sign in</a></li>
+                        <li><a href="{{ route('register') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">Sign up</a></li>
                     @endauth
                 </ul>
             </nav>
