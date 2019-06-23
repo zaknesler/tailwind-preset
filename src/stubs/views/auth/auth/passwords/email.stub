@@ -10,7 +10,7 @@
                 <a href="/" class="font-semibold text-gray-700 hover:text-gray-900 no-underline">{{ config('app.name') }}</a>
             </div>
 
-            <div class="mt-6 mx-auto max-w-xs text-center text-gray-600">
+            <div class="mt-6 text-center text-gray-600">
                 Enter your email address and we'll send you a link to reset your password
             </div>
 
@@ -33,7 +33,7 @@
                             type="email"
                             name="email"
                             value="{{ old('email') }}"
-                            class="mt-1 form-input rounded-lg focus:shadow-transition block w-full {{ $errors->first('email', 'border-red-500') }}"
+                            class="mt-1 form-input block w-full {{ $errors->first('email', 'border-red-500') }}"
                             placeholder="you@example.com"
                         />
 

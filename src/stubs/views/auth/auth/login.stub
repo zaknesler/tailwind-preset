@@ -27,7 +27,7 @@
                             type="email"
                             name="email"
                             value="{{ old('email') }}"
-                            class="mt-1 form-input rounded-lg focus:shadow-transition block w-full {{ $errors->first('email', 'border-red-500') }}"
+                            class="mt-1 form-input block w-full {{ $errors->first('email', 'border-red-500') }}"
                             placeholder="you@example.com"
                         />
 
@@ -45,7 +45,7 @@
                             tabindex="2"
                             type="password"
                             name="password"
-                            class="mt-1 form-input rounded-lg focus:shadow-transition block w-full {{ $errors->first('password', 'border-red-500') }}"
+                            class="mt-1 form-input block w-full {{ $errors->first('password', 'border-red-500') }}"
                             placeholder="••••••••"
                         />
 
