@@ -83,7 +83,7 @@ class Tailwind extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            '@tailwindcss/custom-forms' => '^0.1',
+            '@tailwindcss/custom-forms' => '^0.2',
             'autoprefixer' => '^9.6',
             'axios' => '^0.19',
             'cross-env' => '^5.2',

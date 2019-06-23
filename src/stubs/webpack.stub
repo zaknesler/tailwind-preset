@@ -5,7 +5,7 @@ const mix = require('laravel-mix')
 mix.setPublicPath('public')
   .postCss('resources/css/tailwind.css', 'public/css/app.css', [
     require('tailwindcss'),
-    require('autoprefixer')
+    require('autoprefixer'),
   ])
   .js('resources/js/app.js', 'public/js')
 
