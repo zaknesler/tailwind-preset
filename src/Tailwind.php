@@ -2,6 +2,7 @@
 
 namespace ZakNesler\TailwindPreset;
 
+use Illuminate\Support\Str;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Console\Presets\Preset;
@@ -134,7 +135,7 @@ class Tailwind extends Preset
      */
     protected static function installAuthRoutes()
     {
-        if (str_contains(file_get_contents(base_path('routes/web.php')), 'Auth::routes();')) {
+        if (Str::contains(file_get_contents(base_path('routes/web.php')), 'Auth::routes();')) {
             return;
         }
 
