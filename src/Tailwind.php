@@ -88,9 +88,9 @@ class Tailwind extends Preset
             'autoprefixer' => '^9.6',
             'axios' => '^0.19',
             'cross-env' => '^5.2',
-            'laravel-mix' => '^4.0',
+            'laravel-mix' => '^4.1',
             'laravel-mix-purgecss' => '^4.1',
-            'tailwindcss' => '^1.0',
+            'tailwindcss' => '^1.1',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
         ];
