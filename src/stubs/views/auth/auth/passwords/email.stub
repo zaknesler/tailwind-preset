@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Reset your password')
+@section('title', __('Reset your password'))
 @section('show-header', false)
 
 @section('content-full')
@@ -11,7 +11,7 @@
             </div>
 
             <div class="mt-6 text-center text-gray-600">
-                Enter your email address and we'll send you a link to reset your password
+                {{ __('Enter your email address and we\'ll send you a link to reset your password') }}
             </div>
 
             @if (session('status'))
@@ -25,7 +25,7 @@
 
                 <div>
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">Email</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">{{ __('Email') }}</span>
                         <input
                             autofocus
                             required
@@ -45,10 +45,11 @@
 
                 <div class="mt-6 text-sm flex items-center justify-between">
                     <div>
-                        Remember it? <a tabindex="3" href="{{ route('login') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">Sign in</a>
+                        {{ __('Remember it?') }}
+                        <a tabindex="3" href="{{ route('login') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">{{ __('Sign in') }}</a>
                     </div>
 
-                    <button tabindex="2" class="btn px-5 py-2">Send Link</button>
+                    <button tabindex="2" class="btn px-5 py-2">{{ __('Send Link') }}</button>
                 </div>
             </form>
         </div>

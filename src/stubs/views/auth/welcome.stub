@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Welcome')
+@section('title', __('Welcome'))
 @section('show-header', false)
 
 @section('content-full')
@@ -10,16 +10,16 @@
                 <ul class="-mr-6 flex items-baseline font-semibold text-brand-600">
                     @auth
                         <li class="mr-6">
-                            <a class="hover:text-brand-800" href="{{ route('home') }}">Home</a>
+                            <a class="hover:text-brand-800" href="{{ route('home') }}">{{ __('Home') }}</a>
                         </li>
                     @else
                         <li class="mr-6">
-                            <a class="hover:text-brand-800" href="{{ route('login') }}">Sign in</a>
+                            <a class="hover:text-brand-800" href="{{ route('login') }}">{{ __('Sign in') }}</a>
                         </li>
 
                         @if (Route::has('register'))
                             <li class="mr-6">
-                                <a class="hover:text-brand-800" href="{{ route('register') }}">Sign up</a>
+                                <a class="hover:text-brand-800" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                             </li>
                         @endif
                     @endauth

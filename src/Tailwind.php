@@ -57,6 +57,7 @@ class Tailwind extends Preset
         ]);
 
         static::installViews('auth', [
+            'auth/passwords/confirm.stub',
             'auth/passwords/email.stub',
             'auth/passwords/reset.stub',
             'auth/login.stub',
@@ -73,6 +74,7 @@ class Tailwind extends Preset
         ]);
 
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+        File::copy(__DIR__.'/stubs/en.stub', resource_path('lang/en.json'));
     }
 
     /**
@@ -85,11 +87,11 @@ class Tailwind extends Preset
     {
         return [
             '@tailwindcss/custom-forms' => '^0.2',
-            'autoprefixer' => '^9.6',
+            'autoprefixer' => '^9.7',
             'axios' => '^0.19',
-            'cross-env' => '^5.2',
-            'laravel-mix' => '^4.1',
-            'laravel-mix-purgecss' => '^4.1',
+            'cross-env' => '^6.0',
+            'laravel-mix' => '^5.0',
+            'laravel-mix-purgecss' => '^4.2',
             'tailwindcss' => '^1.1',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',

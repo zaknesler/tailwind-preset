@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Sign in')
+@section('title', __('Sign in'))
 @section('show-header', false)
 
 @section('content-full')
@@ -11,7 +11,7 @@
             </div>
 
             <div class="mt-6 mx-auto max-w-xs text-center text-gray-600">
-                Sign in to your account
+                {{ __('Sign in to your account') }}
             </div>
 
             <form action="{{ route('login') }}" method="POST" class="mt-6">
@@ -19,7 +19,7 @@
 
                 <div>
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">Email</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">{{ __('Email') }}</span>
                         <input
                             autofocus
                             required
@@ -39,7 +39,7 @@
 
                 <div class="mt-3">
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">Password</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">{{ __('Password') }}</span>
                         <input
                             required
                             tabindex="2"
@@ -64,15 +64,17 @@
                             name="remember"
                             class="form-checkbox focus:shadow-transition text-brand-500 cursor-pointer"
                         />
-                        <span class="ml-2 text-gray-600 text-sm select-none">Remember me</span>
+                        <span class="ml-2 text-gray-600 text-sm select-none">{{ __('Remember me') }}</span>
                     </label>
 
-                    <button tabindex="4" class="btn px-5 py-2 text-sm">Sign in</button>
+                    <button tabindex="4" class="btn px-5 py-2 text-sm">{{ __('Sign in') }}</button>
                 </div>
 
                 <div class="mt-6 text-sm text-center">
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">Create account</a>
+                        <a href="{{ route('register') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">
+                            {{ __('Create account') }}
+                        </a>
                     @endif
 
                     @if (Route::has('register') && Route::has('password.request'))
@@ -80,7 +82,9 @@
                     @endif
 
                     @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="text-gray-700 hover:text-gray-800 hover:underline">Forgot password?</a>
+                        <a href="{{ route('password.request') }}" class="text-gray-700 hover:text-gray-800 hover:underline">
+                            {{ __('Forgot password?') }}
+                        </a>
                     @endif
                 </div>
             </form>

@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', '500 Internal Server Error')
+@section('title', __('500 Internal Server Error'))
 @section('show-header', false)
 
 @section('content-full')
@@ -9,10 +9,12 @@
             <div class="mx-auto max-w-xs text-center">
                 <div class="font-semibold leading-none text-gray-800 text-5xl">500</div>
 
-                <div class="my-6 text-lg text-gray-600">Something went wrong</div>
+                <div class="my-6 text-lg text-gray-600">{{ __('Something went wrong') }}</div>
 
                 <div>
-                    <a class="text-brand-600 hover:text-brand-800 no-underline" href="{{ route('home') }}">&larr; Home</a>
+                    <a class="text-brand-600 hover:text-brand-800 no-underline" href="{{ route('home') }}">
+                        &larr; {{ __('Home') }}
+                    </a>
                 </div>
             </div>
         </div>

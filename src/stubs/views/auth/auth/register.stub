@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Sign up')
+@section('title', __('Sign up'))
 @section('show-header', false)
 
 @section('content-full')
@@ -11,7 +11,7 @@
             </div>
 
             <div class="mt-6 mx-auto max-w-xs text-center text-gray-600">
-                Create a new account
+                {{ __('Create a new account') }}
             </div>
 
             <form action="{{ route('register') }}" method="POST" class="mt-6">
@@ -19,7 +19,7 @@
 
                 <div>
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('name', 'text-red-700') }}">Name</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('name', 'text-red-700') }}">{{ __('Name') }}</span>
                         <input
                             autofocus
                             required
@@ -39,7 +39,7 @@
 
                 <div class="mt-3">
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">Email</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('email', 'text-red-700') }}">{{ __('Email') }}</span>
                         <input
                             required
                             tabindex="2"
@@ -58,7 +58,7 @@
 
                 <div class="mt-3">
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">Password</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">{{ __('Password') }}</span>
                         <input
                             required
                             tabindex="3"
@@ -76,7 +76,7 @@
 
                 <div class="mt-3">
                     <label>
-                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password_confirmation', 'text-red-700') }}">Confirm Password</span>
+                        <span class="text-xs font-medium text-gray-600 {{ $errors->first('password_confirmation', 'text-red-700') }}">{{ __('Confirm Password') }}</span>
                         <input
                             required
                             tabindex="4"
@@ -94,10 +94,11 @@
 
                 <div class="mt-6 text-sm flex items-center justify-between">
                     <div>
-                        Have an account? <a tabindex="6" href="{{ route('login') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">Sign in</a>
+                        {{ __('Have an account?') }}
+                        <a tabindex="6" href="{{ route('login') }}" class="font-semibold text-gray-700 hover:text-gray-800 hover:underline">{{ __('Sign in') }}</a>
                     </div>
 
-                    <button tabindex="5" class="btn px-5 py-2">Sign up</button>
+                    <button tabindex="5" class="btn px-5 py-2">{{ __('Sign up') }}</button>
                 </div>
             </form>
         </div>

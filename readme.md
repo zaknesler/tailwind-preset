@@ -59,6 +59,12 @@ yarn dev // npm run dev
 
 Ensure that your database is properly configured and migrated, and you're done!
 
+### Localization
+
+All of the text in the views that this preset provides are configured to be easily translatable. When you install the `tailwind-auth` preset, the file `en.json` will be copied into your application's `resources/lang` directory.
+
+This file includes all of the text found in this package. To update the default English text, simply update the values of any of the key-value pairs. To translate into a different language, duplicate `en.json` and rename it to `{locale}.json`; you can then translate the values into the destination language. For more about localization, please refer to the [Laravel documentation](https://laravel.com/docs/6.x/localization).
+
 ### EditorConfig
 
 To ensure proper guide highlighting in your text editor, it is recommended that you add the following to the end of the `.editorconfig` file:
