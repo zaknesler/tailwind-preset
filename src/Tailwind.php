@@ -74,6 +74,7 @@ class Tailwind extends Preset
         ]);
 
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+        File::copy(__DIR__.'/stubs/en.stub', resource_path('lang/en.json'));
     }
 
     /**
