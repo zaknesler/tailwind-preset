@@ -57,6 +57,7 @@ class Tailwind extends Preset
         ]);
 
         static::installViews('auth', [
+            'auth/passwords/confirm.stub',
             'auth/passwords/email.stub',
             'auth/passwords/reset.stub',
             'auth/login.stub',
