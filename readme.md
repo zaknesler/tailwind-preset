@@ -1,10 +1,12 @@
 ## Tailwind CSS Laravel Front-end Preset
 
-[![Latest Stable Version](https://poser.pugx.org/zaknesler/tailwind-preset/v/stable)](https://packagist.org/packages/zaknesler/tailwind-preset)
-[![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset)
-[![License](https://poser.pugx.org/zaknesler/tailwind-preset/license)](https://packagist.org/packages/zaknesler/tailwind-preset)
+[![Latest Stable Version](https://poser.pugx.org/zaknesler/tailwind-preset/v/stable)](https://packagist.org/packages/zaknesler/tailwind-preset) [![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset) [![License](https://poser.pugx.org/zaknesler/tailwind-preset/license)](https://packagist.org/packages/zaknesler/tailwind-preset)
 
-This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset replaces the default Bootstrap scaffolding, including the example Vue.js component. It also compiles the assets using [Laravel Mix](https://github.com/jeffreyway/laravel-mix) for convenience and [PurgeCSS](https://github.com/fullhuman/purgecss) to generate the smallest files possible.
+A Laravel 7+ front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset comes bundled with Vue.js and an example component, as well as a responsive navigation menu.
+
+This preset uses Laravel Mix to compile and minify assets. Tailwind 1.4 includes PurgeCSS by default, and this preset is configured to purge the proper files.
+
+> This preset is built for Laravel 7 and up. For Laravel 5 or 6, please use [version 5.0](https://github.com/zaknesler/tailwind-preset/tree/a35309799e93fe384d16ead531add16b98b634e1).
 
 **[Live Demo](https://preset.zaknesler.com)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo)
 
@@ -20,55 +22,56 @@ This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). 
 </details>
 
 ### Warning
-Laravel presets are meant to be used with a fresh installation of Laravel. Installing this preset will **overwrite** your existing views and assets. Please install with caution.
+Laravel presets are meant to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
 
 ### Installation
-To install this preset, you must first require the composer dependency in your application. Laravel will automatically register the service provider for you.
 
-```
-composer require zaknesler/tailwind-preset
-```
+1. Require the composer dependency. Laravel will automatically register the package.
 
-Now, install either the `tailwind` or the `tailwind-auth` preset. The `tailwind-auth` preset includes the authentication scaffolding normally generated when `php artisan make:auth` is executed.
+    ```bash
+   composer require zaknesler/tailwind-preset --dev
+    ```
 
-```
-php artisan preset tailwind
+2. Install the preset:
 
-// or
+    ```bash
+   php artisan ui tailwind --auth
 
-php artisan preset tailwind-auth
-```
+   # Without authentication scaffolding
+   php artisan ui tailwind
+    ```
 
-> **Note:** If you install the `tailwind-auth` preset on a version of Laravel that is older than 5.7, you may delete the `views/auth/verify.blade.php` file, as it will not be used.
 
-Install the NPM packages using your favorite package manager.
+3. Install the npm dependencies using your preferred package manager:
 
-```
-yarn // npm install
-```
+    ```bash
+   # Using Yarn
+   yarn
 
-Now you can compile the assets using any of the Laravel build scripts (dev, prod, watch).
+   # Using npm
+   npm install
+    ```
 
-```
-yarn dev // npm run dev
-```
+4. Compile assets:
 
-Ensure that your database is properly configured and migrated, and you're done!
+    ```bash
+   # Using Yarn
+   yarn dev
+
+   # Using npm
+   npm run dev
+    ```
+
+### Customization
+
+Tailwind is built to be fully customizable. The `tailwind.config.js` file that this preset provides includes a handful of customization options to help get you started, including adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, as well as a `theme` color palette, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
+
+The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color keys. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
+
+I have tried to design this preset to use as many Tailwind features as possible. This includes using a plugin, overriding default theme values, configuration destructuring, and using PurgeCSS. To get the most out of Tailwind, it is recommended that you take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and more importantly... get your hands dirty with it!
 
 ### Localization
 
-All of the text in the views that this preset provides are configured to be easily translatable. When you install the `tailwind-auth` preset, the file `en.json` will be copied into your application's `resources/lang` directory.
+This preset includes text that is already configured to be easily translated. An `en.json` file will be copied into your application's `resources/lang` directory when you install the authentication scaffolding. This file includes keys for all of the on-screen text found in this preset.
 
-This file includes all of the text found in this package. To update the default English text, simply update the values of any of the key-value pairs. To translate into a different language, duplicate `en.json` and rename it to `{locale}.json`; you can then translate the values into the destination language. For more about localization, please refer to the [Laravel documentation](https://laravel.com/docs/6.x/localization).
-
-### EditorConfig
-
-To ensure proper guide highlighting in your text editor, it is recommended that you add the following to the end of the `.editorconfig` file:
-
-```
-[{tailwind.config.js,webpack.mix.js}]
-indent_style = space
-indent_size = 2
-```
-
-Alternatively, you may reindent both files to use an indent size of four, which is the default in a Laravel project.
+To translate these values, duplicate the `en.json` file and rename it to `{language}.json`, and begin translating the values for each `"key": "value"` pair. For more about localization, please refer to the [Laravel documentation](https://laravel.com/docs/6.x/localization).
