@@ -12,12 +12,12 @@ This preset uses Laravel Mix to compile and minify assets. Tailwind 1.4 includes
 
 <details>
 <summary>View screenshots</summary>
-    
-![welcome.blade.php](https://user-images.githubusercontent.com/7189795/59567082-dfddce80-9036-11e9-952d-a535f21478e1.png)
 
-![login.blade.php](https://user-images.githubusercontent.com/7189795/59567081-dfddce80-9036-11e9-8401-257eeb78a07c.png)
+<img alt="Welcome page" src="https://user-images.githubusercontent.com/7189795/80769741-37d0d700-8b1c-11ea-9b16-e76fd8cde9f4.png">
 
-![home.blade.php](https://user-images.githubusercontent.com/7189795/59567080-dfddce80-9036-11e9-81be-20044b2b6cd4.png)
+<img alt="Login page" src="https://user-images.githubusercontent.com/7189795/80769744-399a9a80-8b1c-11ea-9caf-00783b9acc80.png">
+
+<img alt="Home page" src="https://user-images.githubusercontent.com/7189795/80769745-3acbc780-8b1c-11ea-9010-25d38f9a3288.png">
 
 </details>
 
