@@ -35,4 +35,10 @@ module.exports = {
   plugins: [
     require('@tailwindcss/custom-forms'),
   ],
+  purge: [
+    './app/**/*.php',
+    './resources/**/*.vue',
+    './resources/**/*.js',
+    './resources/**/*.php',
+  ],
 }

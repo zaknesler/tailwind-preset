@@ -2,8 +2,8 @@
 
 namespace ZakNesler\TailwindPreset;
 
+use Laravel\Ui\UiCommand;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Console\PresetCommand;
 
 class TailwindServiceProvider extends ServiceProvider
 {
@@ -14,28 +14,19 @@ class TailwindServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PresetCommand::macro('tailwind', function ($command) {
-            Tailwind::install();
+        UiCommand::macro('tailwind', function ($command) {
+            if ($command->option('auth')) {
+                TailwindPreset::installAuth();
+                $command->callSilent('ui:controllers');
 
-            $this->installMessage($command);
+                $command->info('Tailwind authentication scaffolding installed successfully.');
+            } else {
+                TailwindPreset::install();
+
+                $command->info('Tailwind scaffolding installed successfully.');
+            }
+
+            $command->comment('Please run "yarn && yarn dev" or "npm install && npm run dev" to compile your fresh scaffolding.');
         });
-
-        PresetCommand::macro('tailwind-auth', function ($command) {
-            Tailwind::installWithAuth();
-
-            $this->installMessage($command);
-        });
-    }
-
-    /**
-     * Print message after successful installation.
-     *
-     * @param  \Illuminate\Console\Command  $command
-     * @return void
-     */
-    protected function installMessage($command)
-    {
-        $command->info('Tailwind scaffolding installed successfully.');
-        $command->comment('Please run "yarn && yarn dev" or "npm install && npm run dev" to compile your fresh scaffolding.');
     }
 }
