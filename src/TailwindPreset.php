@@ -73,7 +73,11 @@ class TailwindPreset extends Preset
             'welcome.stub',
         ]);
 
-        base_path('vendor/laravel/ui/stubs/migrations/2014_10_12_100000_create_password_resets_table.php')
+        copy(
+            base_path('vendor/laravel/ui/stubs/migrations/2014_10_12_100000_create_password_resets_table.php'),
+            base_path('database/migrations/2014_10_12_100000_create_password_resets_table.php')
+        );
+
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
         copy(__DIR__.'/stubs/en.stub', resource_path('lang/en.json'));
     }
