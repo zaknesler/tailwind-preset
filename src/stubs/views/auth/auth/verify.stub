@@ -25,7 +25,8 @@
 
                 <div>
                     {{ __('Didn\'t get the email?') }}
-                    <a href="{{ route('verification.resend') }}" class="font-semibold text-brand-600 hover:text-brand-800">{{ __('Resend it') }}</a>
+                    <form action="{{ route('verification.resend') }}" method="POST" id="resendForm" class="hidden">@csrf</form>
+                    <a href="#" onclick="document.querySelector('#resendForm').submit()" class="font-semibold text-brand-600 hover:text-brand-800">{{ __('Resend it') }}</a>
                 </div>
             </div>
         </div>

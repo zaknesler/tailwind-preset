@@ -22,7 +22,7 @@
                 <div>
                     <label>
                         <div class="mb-1 text-xs font-medium text-gray-600 {{ $errors->first('password', 'text-red-700') }}">
-                            {{ __('Email') }}
+                            {{ __('Password') }}
                         </div>
 
                         <input
