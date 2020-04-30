@@ -6,10 +6,6 @@
 
 This is a Laravel front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset replaces the default Bootstrap scaffolding, including the example Vue.js component. It also compiles the assets using [Laravel Mix](https://github.com/jeffreyway/laravel-mix) for convenience and [PurgeCSS](https://github.com/fullhuman/purgecss) to generate the smallest files possible.
 
-> **Deprecation Notice** &ndash; As of Laravel 6, all front-end presets have been extracted into the [laravel/ui](https://github.com/laravel/ui) repository. In soon time, a Tailwind preset by the maintainers of Laravel will be created. I will maintain development of this package until a Tailwind preset is created, after which this repository will be archived.
-
-> The reason I am confident in doing this is because I would think that an *official* Tailwind CSS preset would include a well-thought, elegant design. If, however, I am not a fan of the design, I would have no problem with continuing to maintain this package.
-
 **[Live Demo](https://preset.zaknesler.com)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo)
 
 <details>
