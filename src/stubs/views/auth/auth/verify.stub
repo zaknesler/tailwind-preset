@@ -5,12 +5,14 @@
 
 @section('content-full')
     <div class="h-full flex">
-        <div class="p-6 m-auto max-w-xs w-full">
+        <div class="p-6 m-auto space-y-6 max-w-xs w-full">
             <div class="flex items-center justify-center">
-                <a href="/" class="font-semibold text-gray-700 hover:text-gray-900 no-underline">{{ config('app.name') }}</a>
+                <a href="/" class="font-semibold text-gray-700 hover:text-gray-900 no-underline">
+                    {{ config('app.name') }}
+                </a>
             </div>
 
-            <div class="mt-6 mx-auto max-w-xs text-center">
+            <div class="space-y-6 mx-auto text-center">
                 <div class="text-gray-600">
                     @if (session('resent'))
                         {{ __('We have sent you a fresh verification link, please check your email.') }}
@@ -19,11 +21,12 @@
                     @endif
                 </div>
 
-                <div class="my-6 mx-auto w-16 h-px block bg-gray-400"></div>
+                <div class="mx-auto w-16 h-px block bg-gray-400"></div>
 
                 <div>
                     {{ __('Didn\'t get the email?') }}
-                    <a href="{{ route('verification.resend') }}" class="font-semibold text-brand-600 hover:text-brand-800">{{ __('Resend it') }}</a>
+                    <form action="{{ route('verification.resend') }}" method="POST" id="resendForm" class="hidden">@csrf</form>
+                    <a href="#" onclick="document.querySelector('#resendForm').submit()" class="font-semibold text-brand-600 hover:text-brand-800">{{ __('Resend it') }}</a>
                 </div>
             </div>
         </div>

@@ -3,7 +3,9 @@
 <div class="w-full bg-gray-100 border-b">
     <div class="max-w-3xl mx-auto flex flex-wrap items-center justify-between">
         <div class="m-6 sm:mr-0">
-            <a href="/" class="font-semibold text-gray-600 hover:text-gray-800 no-underline">{{ config('app.name') }}</a>
+            <a href="/" class="font-semibold text-gray-600 hover:text-gray-800 no-underline">
+                {{ config('app.name') }}
+            </a>
         </div>
 
         <div class="m-3 block sm:hidden">
@@ -29,7 +31,11 @@
         >
             <nav class="sm:flex-1" aria-label="Left navigation">
                 <ul class="sm:flex sm:items-baseline">
-                    <li><a href="{{ route('home') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">{{ __('Home') }}</a></li>
+                    <li>
+                        <a href="{{ route('home') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">
+                            {{ __('Home') }}
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
@@ -37,16 +43,27 @@
                 <ul class="sm:flex sm:items-baseline">
                     @auth
                         <li>
+                            <form action="{{ route('logout') }}" method="POST" id="logoutForm" class="hidden">@csrf</form>
                             <a
                                 href="#"
                                 class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline"
                                 onclick="document.querySelector('#logoutForm').submit()"
-                            >{{ __('Logout') }}</a>
-                            <form action="{{ route('logout') }}" method="POST" id="logoutForm" class="hidden">@csrf</form>
+                            >
+                                {{ __('Logout') }}
+                            </a>
                         </li>
                     @else
-                        <li><a href="{{ route('login') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">{{ __('Sign in') }}</a></li>
-                        <li><a href="{{ route('register') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">{{ __('Sign up') }}</a></li>
+                        <li>
+                            <a href="{{ route('login') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">
+                                {{ __('Sign in') }}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('register') }}" class="px-6 py-3 sm:p-0 sm:ml-5 block sm:inline-block text-brand-600 hover:text-brand-900 hover:bg-gray-200 sm:hover:bg-transparent no-underline">
+                                {{ __('Sign up') }}
+                            </a>
+                        </li>
                     @endauth
                 </ul>
             </nav>

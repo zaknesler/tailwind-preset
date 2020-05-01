@@ -14,7 +14,7 @@
                 type: String,
                 required: false,
                 default: 'Example Component'
-            }
+            },
         },
 
         mounted() {
