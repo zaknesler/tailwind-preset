@@ -8,7 +8,7 @@
         type="{{ $type }}"
         name="{{ $name }}"
         value="{{ $attributes->get('value') ?? old($name) }}"
-        {{ $attributes->merge(['class' => 'form-input block w-full ' . $errors->first($name, 'border-red-500')]) }}
+        {{ $attributes->merge(['class' => 'form-input px-4 py-3 block w-full ' . $errors->first($name, 'border-red-500')]) }}
     />
 
     @error ($name)
