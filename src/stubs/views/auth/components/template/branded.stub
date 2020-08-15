@@ -1,4 +1,4 @@
-<div class="h-full bg-gray-100 flex">
+<div class="h-full flex">
     <div class="p-6 m-auto space-y-6 max-w-sm w-full">
         <div class="flex items-center justify-center">
             <x-link class="text-lg flex items-center" href="/">
