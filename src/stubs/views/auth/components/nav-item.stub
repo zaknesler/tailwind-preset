@@ -1,0 +1,16 @@
+<li>
+    @if ($attributes->get('action'))
+        <form action="{{ $action }}" method="{{ $method ?? 'POST' }}" id="{{ $id }}" class="hidden">
+            @csrf
+            @method($method ?? 'POST')
+        </form>
+    @endif
+
+    <a
+        @if ($attributes->get('action'))
+            onclick="document.getElementById('{{ $id }}').submit()"
+        @endif
+        href="{{ $href ?? '#' }}"
+        class="{{ $attributes->get('class') }} {{ Str::startsWith(request()->url(), $attributes->get('href')) ? 'bg-gray-900' : '' }} px-6 py-3 sm:px-3 sm:py-2 sm:ml-2 sm:rounded-lg flex sm:inline-flex items-center font-medium text-gray-400 hover:text-white hover:bg-brand-700 no-underline cursor-pointer"
+    >{{ $text ?? $slot }}</a>
+</li>

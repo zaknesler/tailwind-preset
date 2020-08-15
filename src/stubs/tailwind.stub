@@ -4,11 +4,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                brand: { ...defaultTheme.colors.blue },
+                header: '#272f3e',
+                brand: { ...defaultTheme.colors.red },
             },
 
             fontFamily: {
-                sans: [ 'Inter', ...defaultTheme.fontFamily.sans ],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
 
             boxShadow: theme => ({
@@ -19,7 +20,9 @@ module.exports = {
         customForms: theme => ({
             default: {
                 'input, textarea, multiselect, select': {
+                    padding: '0.75rem 1rem',
                     borderRadius: theme('borderRadius.lg'),
+                    boxShadow: theme('boxShadow.sm'),
                 },
 
                 'input, textarea, multiselect, select, checkbox, radio': {
@@ -39,17 +42,14 @@ module.exports = {
             },
         }),
     },
-
     variants: {},
-
     plugins: [
-        require('@tailwindcss/custom-forms'),
+        require('@tailwindcss/custom-forms')
     ],
-
     purge: [
         './app/**/*.php',
         './resources/**/*.vue',
         './resources/**/*.js',
-        './resources/**/*.php',
+        './resources/**/*.php'
     ],
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="border rounded-lg">
+    <div class="border shadow-sm rounded-lg">
         <div class="px-4 py-3 border-b bg-gray-100 text-gray-600 font-semibold rounded-t-lg" v-text="title" />
         <div class="p-4 bg-white text-gray-700 rounded-b-lg overflow-hidden">
             <slot>I'm an example component!</slot>
@@ -13,12 +13,12 @@
             title: {
                 type: String,
                 required: false,
-                default: 'Example Component'
+                default: 'Example Component',
             },
         },
 
         mounted() {
             console.log('Component mounted.')
-        }
+        },
     }
 </script>

@@ -10,6 +10,45 @@ use Illuminate\Filesystem\Filesystem;
 class TailwindPreset extends Preset
 {
     /**
+     * Views for the default installation.
+     *
+     * @var array
+     */
+    protected static $defaultViews = [
+        'welcome.stub',
+    ];
+
+    /**
+     * Views for the authentication scaffolding.
+     *
+     * @var array
+     */
+    protected static $authViews = [
+        'components/form/action.stub',
+        'components/form/checkbox.stub',
+        'components/form/input.stub',
+        'components/template/base.stub',
+        'components/template/branded.stub',
+        'components/template/error.stub',
+        'components/template/form.stub',
+        'components/link.stub',
+        'components/nav-item.stub',
+        'auth/passwords/confirm.stub',
+        'auth/passwords/email.stub',
+        'auth/passwords/reset.stub',
+        'auth/login.stub',
+        'auth/register.stub',
+        'auth/verify.stub',
+        'errors/404.stub',
+        'errors/419.stub',
+        'errors/500.stub',
+        'errors/503.stub',
+        'partials/_header.stub',
+        'home.stub',
+        'welcome.stub',
+    ];
+
+    /**
      * Setup basic assets.
      *
      * @return void
@@ -35,9 +74,7 @@ class TailwindPreset extends Preset
     {
         static::setup();
 
-        static::installViews('default', [
-            'welcome.stub',
-        ]);
+        static::installViews('default', static::$defaultViews);
     }
 
     /**
@@ -52,26 +89,13 @@ class TailwindPreset extends Preset
 
         static::createResourceDirectories([
             'views/auth/passwords',
+            'views/components/form',
+            'views/components/template',
             'views/errors',
-            'views/layouts/partials',
+            'views/partials',
         ]);
 
-        static::installViews('auth', [
-            'auth/passwords/confirm.stub',
-            'auth/passwords/email.stub',
-            'auth/passwords/reset.stub',
-            'auth/login.stub',
-            'auth/register.stub',
-            'auth/verify.stub',
-            'errors/404.stub',
-            'errors/419.stub',
-            'errors/500.stub',
-            'errors/503.stub',
-            'layouts/partials/_header.stub',
-            'layouts/base.stub',
-            'home.stub',
-            'welcome.stub',
-        ]);
+        static::installViews('auth', static::$authViews);
 
         copy(
             base_path('vendor/laravel/ui/stubs/migrations/2014_10_12_100000_create_password_resets_table.php'),
@@ -79,7 +103,7 @@ class TailwindPreset extends Preset
         );
 
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
-        copy(__DIR__.'/stubs/en.stub', resource_path('lang/en.json'));
+        copy(__DIR__ . '/stubs/en.stub', resource_path('lang/en.json'));
     }
 
     /**
@@ -113,7 +137,7 @@ class TailwindPreset extends Preset
         $filesystem = new Filesystem;
 
         foreach ($dirs as $dir) {
-            if (! is_dir($dir = resource_path($dir))) {
+            if (!is_dir($dir = resource_path($dir))) {
                 $filesystem->makeDirectory($dir, 0755, true);
             }
         }
@@ -132,8 +156,8 @@ class TailwindPreset extends Preset
 
         foreach ($views as $view) {
             $filesystem->copy(
-                __DIR__.'/stubs/views/'.$baseDir.'/'.$view,
-                resource_path('views/'.str_replace('stub', 'blade.php', $view))
+                __DIR__ . '/stubs/views/' . $baseDir . '/' . $view,
+                resource_path('views/' . str_replace('stub', 'blade.php', $view))
             );
         }
     }
@@ -166,7 +190,7 @@ class TailwindPreset extends Preset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__.'/stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__ . '/stubs/controllers/HomeController.stub')
         );
     }
 
@@ -181,7 +205,7 @@ class TailwindPreset extends Preset
 
         collect(['css', 'js/components'])
             ->each(function ($dir) use ($filesystem) {
-                if (! is_dir(resource_path($dir))) {
+                if (!is_dir(resource_path($dir))) {
                     $filesystem->makeDirectory(resource_path($dir), 0755, true);
                 }
             });
@@ -196,11 +220,11 @@ class TailwindPreset extends Preset
     {
         (new Filesystem)->delete(base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.config.js'));
-        copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
+        copy(__DIR__ . '/stubs/tailwind.stub', base_path('tailwind.config.js'));
+        copy(__DIR__ . '/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
+        copy(__DIR__ . '/stubs/js/app.stub', resource_path('js/app.js'));
+        copy(__DIR__ . '/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
     }
 
     /**
@@ -210,7 +234,7 @@ class TailwindPreset extends Preset
      */
     protected static function installStyles()
     {
-        copy(__DIR__.'/stubs/css/tailwind.stub', resource_path('css/tailwind.css'));
+        copy(__DIR__ . '/stubs/css/tailwind.stub', resource_path('css/tailwind.css'));
     }
 
     /**
@@ -221,7 +245,7 @@ class TailwindPreset extends Preset
     protected static function updateExampleComponent()
     {
         copy(
-            __DIR__.'/stubs/js/components/ExampleComponent.stub',
+            __DIR__ . '/stubs/js/components/ExampleComponent.stub',
             resource_path('js/components/ExampleComponent.vue')
         );
     }
