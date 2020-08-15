@@ -6,7 +6,7 @@
 @tailwind components;
 
 .btn {
-    @apply px-6 py-3 bg-brand-500 font-semibold text-white rounded-lg border-none cursor-pointer appearance-none transition duration-100;
+    @apply px-6 py-3 bg-brand-500 font-semibold text-white rounded-lg shadow-sm border-none cursor-pointer appearance-none transition duration-100;
 }
 
 .btn:hover {
