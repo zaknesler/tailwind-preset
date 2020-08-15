@@ -92,11 +92,11 @@ class TailwindPreset extends Preset
     {
         return [
             '@tailwindcss/custom-forms' => '^0.2',
-            'autoprefixer' => '^9.7',
+            'autoprefixer' => '^9.8',
             'axios' => '^0.19',
             'cross-env' => '^6.0',
             'laravel-mix' => '^5.0',
-            'tailwindcss' => '^1.4',
+            'tailwindcss' => '^1.6',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
         ];

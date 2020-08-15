@@ -22,49 +22,49 @@ This preset uses Laravel Mix to compile and minify assets. Tailwind 1.4 includes
 </details>
 
 ### Warning
-Laravel presets are meant to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
+
+> Laravel presets are meant to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
 
 ### Installation
 
 1. Require the composer dependency. Laravel will automatically register the package.
 
-    ```bash
+   ```bash
    composer require zaknesler/tailwind-preset --dev
-    ```
+   ```
 
 2. Install the preset:
 
-    ```bash
+   ```bash
    php artisan ui tailwind --auth
 
    # Without authentication scaffolding
    php artisan ui tailwind
-    ```
-
+   ```
 
 3. Install the npm dependencies using your preferred package manager:
 
-    ```bash
+   ```bash
    # Using Yarn
    yarn
 
    # Using npm
    npm install
-    ```
+   ```
 
 4. Compile assets:
 
-    ```bash
+   ```bash
    # Using Yarn
    yarn dev
 
    # Using npm
    npm run dev
-    ```
+   ```
 
 ### Customization
 
-Tailwind is built to be fully customizable. The `tailwind.config.js` file that this preset provides includes a handful of customization options to help get you started, including adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, as well as a `theme` color palette, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
+Tailwind is built to be fully customizable. The `tailwind.config.js` file that this preset provides includes a handful of custom options to help get you started, including adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, a `theme` color palette for quick customization, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
 
 The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color keys. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
 
