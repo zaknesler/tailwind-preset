@@ -13,7 +13,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="h-full font-sans font-normal text-base tracking-normal leading-normal bg-white text-gray-700">
-    <div id="app" class="h-full" v-cloak>
+    <div id="app" class="h-full">
         @if ($attributes->get('content-full'))
             {{ $slot }}
         @else
