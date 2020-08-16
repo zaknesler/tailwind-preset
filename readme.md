@@ -62,6 +62,4 @@ Tailwind is built to be fully customizable, and thus, the `tailwind.config.js` f
 
 The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color palette. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
 
-This preset is designed to utilize many Tailwind features, including using a plugin, overriding default theme values, extracting components using `@apply`, and configuration for PurgeCSS.
-
-To really get the most out of Tailwind, you need to use it! Take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and more importantly... get your hands dirty with it! I hope this preset helps you out!
+This preset is designed to utilize many Tailwind features, including using a plugin, overriding default theme values, extracting components using `@apply`, and configuration for PurgeCSS. To really get the most out of Tailwind, you need to use it! Take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and most importantly... get your hands dirty with it! I hope this preset helps you out!
