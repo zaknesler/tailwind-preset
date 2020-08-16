@@ -12,9 +12,7 @@ This preset also uses Laravel Mix to compile and minify assets. Tailwind comes p
 
 <details>
 <summary>View preview screenshots</summary>
-
 TODO
-
 </details>
 
 #### Warning
@@ -60,8 +58,10 @@ TODO
 
 ### Customization
 
-Tailwind is built to be fully customizable. The `tailwind.config.js` file that this preset provides includes a handful of custom options to help get you started, including adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, a `theme` color palette for quick customization, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
+Tailwind is built to be fully customizable, and thus, the `tailwind.config.js` file that comes with this preset includes a handful of customizations to help get you started. These include adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, a `theme` color palette for quick customization, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
 
-The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color keys. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
+The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color palette. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
 
-I have tried to design this preset to use as many Tailwind features as possible. This includes using a plugin, overriding default theme values, configuration destructuring, and using PurgeCSS. To get the most out of Tailwind, it is recommended that you take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and more importantly... get your hands dirty with it!
+This preset is designed to utilize many Tailwind features, including using a plugin, overriding default theme values, extracting components using `@apply`, and configuration for PurgeCSS.
+
+To really get the most out of Tailwind, you need to use it! Take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and more importantly... get your hands dirty with it! I hope this preset helps you out!
