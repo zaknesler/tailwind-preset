@@ -11,6 +11,6 @@
             onclick="document.getElementById('{{ $id }}').submit()"
         @endif
         href="{{ $href ?? '#' }}"
-        class="{{ $attributes->get('class') }} {{ Str::startsWith(request()->url(), $attributes->get('href')) ? 'bg-gray-900' : '' }} px-6 py-3 sm:px-3 sm:py-2 sm:ml-2 sm:rounded-lg flex sm:inline-flex items-center font-medium text-gray-400 hover:text-white hover:bg-brand-700 no-underline cursor-pointer"
+        class="{{ $attributes->get('class') }} {{ Str::startsWith(request()->url(), $attributes->get('href')) ? 'bg-gray-900' : '' }} px-6 py-3 sm:px-3 sm:py-2 sm:ml-1 sm:rounded-lg flex sm:inline-flex items-center text-base sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-black no-underline cursor-pointer"
     >{{ $text ?? $slot }}</a>
 </li>
