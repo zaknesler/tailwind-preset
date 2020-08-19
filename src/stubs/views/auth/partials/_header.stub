@@ -35,7 +35,7 @@
         >
             <nav class="sm:flex-1" aria-label="Left navigation">
                 <ul class="sm:flex sm:items-baseline">
-                    <x-nav-item href="{{ route('home') }}">Home</x-nav-item>
+                    <x-nav-item route="home">Home</x-nav-item>
                 </ul>
             </nav>
 
@@ -44,8 +44,8 @@
                     @auth
                         <x-nav-item action="{{ route('logout') }}" method="POST" id="logout-form">Sign out</x-nav-item>
                     @else
-                        <x-nav-item href="{{ route('login') }}">Sign in</x-nav-item>
-                        <x-nav-item href="{{ route('register') }}">Sign up</x-nav-item>
+                        <x-nav-item route="login">Sign in</x-nav-item>
+                        <x-nav-item route="register">Sign up</x-nav-item>
                     @endauth
                 </ul>
             </nav>
