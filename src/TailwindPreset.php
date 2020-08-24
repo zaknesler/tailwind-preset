@@ -136,7 +136,7 @@ class TailwindPreset extends Preset
         $filesystem = new Filesystem;
 
         foreach ($dirs as $dir) {
-            if (!is_dir($dir = resource_path($dir))) {
+            if (! is_dir($dir = resource_path($dir))) {
                 $filesystem->makeDirectory($dir, 0755, true);
             }
         }
@@ -155,8 +155,8 @@ class TailwindPreset extends Preset
 
         foreach ($views as $view) {
             $filesystem->copy(
-                __DIR__ . '/stubs/views/' . $baseDir . '/' . $view,
-                resource_path('views/' . str_replace('stub', 'blade.php', $view))
+                __DIR__.'/stubs/views/'.$baseDir.'/'.$view,
+                resource_path('views/'.str_replace('stub', 'blade.php', $view))
             );
         }
     }
@@ -189,7 +189,7 @@ class TailwindPreset extends Preset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__ . '/stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__.'/stubs/controllers/HomeController.stub')
         );
     }
 
@@ -204,7 +204,7 @@ class TailwindPreset extends Preset
 
         collect(['css', 'js/components'])
             ->each(function ($dir) use ($filesystem) {
-                if (!is_dir(resource_path($dir))) {
+                if (! is_dir(resource_path($dir))) {
                     $filesystem->makeDirectory(resource_path($dir), 0755, true);
                 }
             });
@@ -219,11 +219,11 @@ class TailwindPreset extends Preset
     {
         (new Filesystem)->delete(base_path('webpack.mix.js'));
 
-        copy(__DIR__ . '/stubs/tailwind.stub', base_path('tailwind.config.js'));
-        copy(__DIR__ . '/stubs/webpack.stub', base_path('webpack.mix.js'));
+        copy(__DIR__.'/stubs/tailwind.stub', base_path('tailwind.config.js'));
+        copy(__DIR__.'/stubs/webpack.stub', base_path('webpack.mix.js'));
 
-        copy(__DIR__ . '/stubs/js/app.stub', resource_path('js/app.js'));
-        copy(__DIR__ . '/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
+        copy(__DIR__.'/stubs/js/app.stub', resource_path('js/app.js'));
+        copy(__DIR__.'/stubs/js/bootstrap.stub', resource_path('js/bootstrap.js'));
     }
 
     /**
@@ -233,7 +233,7 @@ class TailwindPreset extends Preset
      */
     protected static function installStyles()
     {
-        copy(__DIR__ . '/stubs/css/tailwind.stub', resource_path('css/tailwind.css'));
+        copy(__DIR__.'/stubs/css/tailwind.stub', resource_path('css/tailwind.css'));
     }
 
     /**
@@ -244,7 +244,7 @@ class TailwindPreset extends Preset
     protected static function updateExampleComponent()
     {
         copy(
-            __DIR__ . '/stubs/js/components/ExampleComponent.stub',
+            __DIR__.'/stubs/js/components/ExampleComponent.stub',
             resource_path('js/components/ExampleComponent.vue')
         );
     }
