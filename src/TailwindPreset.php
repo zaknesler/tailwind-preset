@@ -10,6 +10,45 @@ use Illuminate\Filesystem\Filesystem;
 class TailwindPreset extends Preset
 {
     /**
+     * Views for the default installation.
+     *
+     * @var array
+     */
+    protected static $defaultViews = [
+        'welcome.stub',
+    ];
+
+    /**
+     * Views for the authentication scaffolding.
+     *
+     * @var array
+     */
+    protected static $authViews = [
+        'components/form/action.stub',
+        'components/form/checkbox.stub',
+        'components/form/input.stub',
+        'components/template/base.stub',
+        'components/template/branded.stub',
+        'components/template/error.stub',
+        'components/template/form.stub',
+        'components/link.stub',
+        'components/nav-item.stub',
+        'auth/passwords/confirm.stub',
+        'auth/passwords/email.stub',
+        'auth/passwords/reset.stub',
+        'auth/login.stub',
+        'auth/register.stub',
+        'auth/verify.stub',
+        'errors/404.stub',
+        'errors/419.stub',
+        'errors/500.stub',
+        'errors/503.stub',
+        'partials/_header.stub',
+        'home.stub',
+        'welcome.stub',
+    ];
+
+    /**
      * Setup basic assets.
      *
      * @return void
@@ -35,9 +74,7 @@ class TailwindPreset extends Preset
     {
         static::setup();
 
-        static::installViews('default', [
-            'welcome.stub',
-        ]);
+        static::installViews('default', static::$defaultViews);
     }
 
     /**
@@ -52,26 +89,13 @@ class TailwindPreset extends Preset
 
         static::createResourceDirectories([
             'views/auth/passwords',
+            'views/components/form',
+            'views/components/template',
             'views/errors',
-            'views/layouts/partials',
+            'views/partials',
         ]);
 
-        static::installViews('auth', [
-            'auth/passwords/confirm.stub',
-            'auth/passwords/email.stub',
-            'auth/passwords/reset.stub',
-            'auth/login.stub',
-            'auth/register.stub',
-            'auth/verify.stub',
-            'errors/404.stub',
-            'errors/419.stub',
-            'errors/500.stub',
-            'errors/503.stub',
-            'layouts/partials/_header.stub',
-            'layouts/base.stub',
-            'home.stub',
-            'welcome.stub',
-        ]);
+        static::installViews('auth', static::$authViews);
 
         copy(
             base_path('vendor/laravel/ui/stubs/migrations/2014_10_12_100000_create_password_resets_table.php'),
@@ -79,7 +103,6 @@ class TailwindPreset extends Preset
         );
 
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
-        copy(__DIR__.'/stubs/en.stub', resource_path('lang/en.json'));
     }
 
     /**
@@ -93,10 +116,10 @@ class TailwindPreset extends Preset
         return [
             '@tailwindcss/custom-forms' => '^0.2',
             'autoprefixer' => '^9.8',
-            'axios' => '^0.19',
-            'cross-env' => '^6.0',
+            'axios' => '^0.20',
+            'cross-env' => '^7.0',
             'laravel-mix' => '^5.0',
-            'tailwindcss' => '^1.6',
+            'tailwindcss' => '^1.7',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
         ];

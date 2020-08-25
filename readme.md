@@ -2,28 +2,30 @@
 
 [![Latest Stable Version](https://poser.pugx.org/zaknesler/tailwind-preset/v/stable)](https://packagist.org/packages/zaknesler/tailwind-preset) [![Total Downloads](https://poser.pugx.org/zaknesler/tailwind-preset/downloads)](https://packagist.org/packages/zaknesler/tailwind-preset) [![License](https://poser.pugx.org/zaknesler/tailwind-preset/license)](https://packagist.org/packages/zaknesler/tailwind-preset)
 
-A Laravel 7+ front-end preset for [Tailwind CSS](https://tailwindcss.com). This preset comes bundled with Vue.js and an example component, as well as a responsive navigation menu.
+Laravel 7+ front-end preset for [Tailwind CSS](https://tailwindcss.com). Includes Vue.js (and an example component), a clean and fully-responsive UI, and the utilization of Blade components to reduce code duplication.
 
-This preset uses Laravel Mix to compile and minify assets. Tailwind 1.4 includes PurgeCSS by default, and this preset is configured to purge the proper files.
+This preset also uses Laravel Mix to compile and minify assets. Tailwind comes packaged with PurgeCSS, and this preset is configured to purge the proper files.
 
-> This preset is built for Laravel 7 and up. For Laravel 5 or 6, please use [version 5.0](https://github.com/zaknesler/tailwind-preset/tree/a35309799e93fe384d16ead531add16b98b634e1).
+> This preset is built for Laravel 7 and up. For Laravel 5 or 6, please use [version 5.0](https://github.com/zaknesler/tailwind-preset/tree/v5.0.0).
 
-**[Live Demo](https://preset.zaknesler.com)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo)
+<!-- **[Live Demo](https://preset.zak.bz)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo) -->
 
 <details>
-<summary>View screenshots</summary>
+<summary>View preview screenshots</summary>
 
-<img alt="Welcome page" src="https://user-images.githubusercontent.com/7189795/80769741-37d0d700-8b1c-11ea-9b16-e76fd8cde9f4.png">
+![Welcome View](https://user-images.githubusercontent.com/7189795/91107549-8b26e200-e643-11ea-82f7-27ef51da169d.png)
 
-<img alt="Login page" src="https://user-images.githubusercontent.com/7189795/80769744-399a9a80-8b1c-11ea-9caf-00783b9acc80.png">
+![Login View](https://user-images.githubusercontent.com/7189795/91107547-8b26e200-e643-11ea-9684-fe576feb187b.png)
 
-<img alt="Home page" src="https://user-images.githubusercontent.com/7189795/80769745-3acbc780-8b1c-11ea-9010-25d38f9a3288.png">
+![Home View](https://user-images.githubusercontent.com/7189795/91107546-8b26e200-e643-11ea-9a38-8d5007c3f6c5.png)
+
+![Responsive Nav](https://user-images.githubusercontent.com/7189795/91107548-8b26e200-e643-11ea-8f40-48449450dc60.png)
 
 </details>
 
 ### Warning
 
-> Laravel presets are meant to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
+> Laravel presets are designed to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
 
 ### Installation
 
@@ -64,14 +66,8 @@ This preset uses Laravel Mix to compile and minify assets. Tailwind 1.4 includes
 
 ### Customization
 
-Tailwind is built to be fully customizable. The `tailwind.config.js` file that this preset provides includes a handful of custom options to help get you started, including adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, a `theme` color palette for quick customization, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
+Tailwind is built to be fully customizable, and thus, the `tailwind.config.js` file that comes with this preset includes a handful of customizations to help get you started. These include adding [Inter](https://fonts.google.com/specimen/Inter) to the default font stack, a `theme` color palette for quick customization, as well as configuration for the [Tailwind custom-forms](https://tailwindcss-custom-forms.netlify.app/) plugin.
 
-The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color keys. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
+The `theme` color palette, by default, simply destructures Tailwind's blue color palette, but can be easily swapped out for your own color palette. For more information, visit the [Tailwind color customization page](https://tailwindcss.com/docs/customizing-colors).
 
-I have tried to design this preset to use as many Tailwind features as possible. This includes using a plugin, overriding default theme values, configuration destructuring, and using PurgeCSS. To get the most out of Tailwind, it is recommended that you take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and more importantly... get your hands dirty with it!
-
-### Localization
-
-This preset includes text that is already configured to be easily translated. An `en.json` file will be copied into your application's `resources/lang` directory when you install the authentication scaffolding. This file includes keys for all of the on-screen text found in this preset.
-
-To translate these values, duplicate the `en.json` file and rename it to `{language}.json`, and begin translating the values for each `"key": "value"` pair. For more about localization, please refer to the [Laravel documentation](https://laravel.com/docs/6.x/localization).
+This preset is designed to utilize many Tailwind features, including using a plugin, overriding default theme values, extracting components using `@apply`, and configuration for PurgeCSS. To really get the most out of Tailwind, you need to use it! Take a deep dive into Tailwind's [incredible documentation](https://tailwindcss.com/docs/installation), and most importantly... get your hands dirty with it! I hope this preset helps you out!
