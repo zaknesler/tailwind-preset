@@ -42,7 +42,7 @@
             <nav class="sm:flex sm:items-center" aria-label="Right navigation">
                 <ul class="sm:flex sm:items-baseline">
                     @auth
-                        <x-nav-item action="{{ route('logout') }}" method="POST" id="logout-form">Sign out</x-nav-item>
+                        <x-nav-item :action="route('logout')" method="POST" id="logout-form">Sign out</x-nav-item>
                     @else
                         <x-nav-item route="login">Sign in</x-nav-item>
                         <x-nav-item route="register">Sign up</x-nav-item>

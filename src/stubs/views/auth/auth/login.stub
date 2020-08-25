@@ -1,5 +1,5 @@
 <x-template.base content-full title="Sign in">
-    <x-template.form subtext="Sign in to your account" action="{{ route('login') }}" method="POST">
+    <x-template.form subtext="Sign in to your account" :action="route('login')" method="POST">
         <div class="space-y-6">
             <x-form.input autofocus required name="email" type="email" label="Email" placeholder="you@example.com" />
             <x-form.input required name="password" type="password" label="Password" placeholder="••••••••" />
@@ -13,7 +13,7 @@
 
         <div class="text-sm text-center">
             @if (Route::has('register'))
-                <x-link class="font-semibold" href="{{ route('register') }}" text="Create account" />
+                <x-link class="font-semibold" :href="route('register')" text="Create account" />
             @endif
 
             @if (Route::has('register') and Route::has('password.request'))
@@ -21,7 +21,7 @@
             @endif
 
             @if (Route::has('password.request'))
-                <x-link href="{{ route('password.request') }}" text="Forgot password?" />
+                <x-link :href="route('password.request')" text="Forgot password?" />
             @endif
         </div>
     </x-template.form>

@@ -11,7 +11,7 @@
                 </div>
 
                 <div>
-                    <x-link href="{{ route('home') }}">&larr; Home</x-link>
+                    <x-link :href="route('home')">&larr; Home</x-link>
                 </div>
             </div>
         </div>

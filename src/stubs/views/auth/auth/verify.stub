@@ -13,7 +13,7 @@
 
             <div>
                 Didn't get the email?
-                <x-form.action action="{{ route('verification.resend') }}" method="POST" class="font-semibold text-brand-600 hover:text-brand-800">Resend it</x-form.action>
+                <x-form.action :action="route('verification.resend')" method="POST" class="font-semibold text-brand-600 hover:text-brand-800">Resend it</x-form.action>
             </div>
         </div>
     </x-template.branded>
