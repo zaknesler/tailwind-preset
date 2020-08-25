@@ -47,4 +47,11 @@ module.exports = {
         './resources/**/*.js',
         './resources/**/*.php',
     ],
+    experimental: {
+        applyComplexClasses: true,
+        uniformColorPalette: true,
+    },
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
 }
