@@ -12,10 +12,18 @@ This preset also uses Laravel Mix to compile and minify assets. Tailwind comes p
 
 <details>
 <summary>View preview screenshots</summary>
-TODO
+
+![Welcome View](https://user-images.githubusercontent.com/7189795/91107549-8b26e200-e643-11ea-82f7-27ef51da169d.png)
+
+![Login View](https://user-images.githubusercontent.com/7189795/91107547-8b26e200-e643-11ea-9684-fe576feb187b.png)
+
+![Home View](https://user-images.githubusercontent.com/7189795/91107546-8b26e200-e643-11ea-9a38-8d5007c3f6c5.png)
+
+![Responsive Nav](https://user-images.githubusercontent.com/7189795/91107548-8b26e200-e643-11ea-8f40-48449450dc60.png)
+
 </details>
 
-#### Warning
+### Warning
 
 > Laravel presets are designed to be installed onto a fresh instance of Laravel. This preset will **overwrite** your existing views, assets, and Home controller. Please use with caution.
 
