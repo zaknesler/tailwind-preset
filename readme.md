@@ -8,9 +8,7 @@ This preset also uses Laravel Mix to compile and minify assets. Tailwind comes p
 
 > This preset is built for Laravel 7 and up. For Laravel 5 or 6, please use [version 5.0](https://github.com/zaknesler/tailwind-preset/tree/v5.0.0).
 
-[Example Repository](https://github.com/zaknesler/tw-preset-demo)
-
-<!-- **[Live Demo](https://preset.zak.bz)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo) -->
+**[Live Demo](https://preset.nesler.dev)** &middot; [Example Repository](https://github.com/zaknesler/tw-preset-demo)
 
 <details>
 <summary>View preview screenshots</summary>
