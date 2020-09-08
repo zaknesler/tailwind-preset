@@ -176,7 +176,7 @@ class TailwindPreset extends Preset
             base_path('routes/web.php'),
             "\nRoute::namespace('App\Http\Controllers')->group(function () {\n".
             "    Auth::routes();\n\n".
-            "Route::get('/home', 'HomeController@index')->name('home');\n});\n",
+            "    Route::get('/home', 'HomeController@index')->name('home');\n});\n",
             FILE_APPEND
         );
     }
