@@ -119,7 +119,7 @@ class TailwindPreset extends Preset
             'axios' => '^0.20',
             'cross-env' => '^7.0',
             'laravel-mix' => '^5.0',
-            'tailwindcss' => '^1.7',
+            'tailwindcss' => '^1.8',
             'vue' => '^2.6',
             'vue-template-compiler' => '^2.6',
         ];
