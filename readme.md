@@ -44,9 +44,6 @@ This preset also uses Laravel Mix to compile and minify assets. Tailwind comes p
    php artisan ui tailwind
    ```
 
-   > #### Note
-   > If you are using Laravel 8, be sure to change the import of the `User` model in `App\Http\Controllers\Auth\RegisterController.php`, as they are now placed within a "Models" directory.
-
 3. Install the npm dependencies using your preferred package manager:
 
    ```bash
